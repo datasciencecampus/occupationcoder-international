@@ -2,33 +2,24 @@
 occupationcoder
 ===============
 
+Disclaimer
+~~~~~~~~~~
 
+This code is provided 'as is'. We would love it if you made it better or
+extended it to work for other countries. All views expressed are our
+personal views, not those of any employer.
 
-.. image:: https://img.shields.io/pypi/v/occupationcoder.svg
-        :target: https://pypi.python.org/pypi/occupationcoder
+Colleagues at the Office for National Statistics Data Science Campus are not responsible for responding to requests for additional features.
 
-.. image:: https://img.shields.io/travis/aeturrell/occupationcoder.svg
-        :target: https://travis-ci.com/aeturrell/occupationcoder
-
-.. image:: https://readthedocs.org/projects/occupationcoder/badge/?version=latest
-        :target: https://occupationcoder.readthedocs.io/en/latest/?version=latest
-        :alt: Documentation Status
+This approach to occupation coding has only been tested with data written in English, there is no guarantee it will work for other languages.
 
 
 A tool to assign standard occupational classification codes to job vacancy descriptions
 ---------------------------------------------------------------------------------------
 
-Given a job title, job description, and job sector the algorithm assigns
-a UK 3-digit standard occupational classification (SOC) code to the job.
-The algorithm uses the **SOC 2010** standard, more details of which can
-be found on `the ONS'
-website <https://www.ons.gov.uk/methodology/classificationsandstandards/standardoccupationalclassificationsoc/soc2010>`__.
-
-This code originally written by Jyldyz Djumalieva, `Arthur
-Turrell <http://aeturrell.github.io/home>`__, David Copple, James
-Thurgood, and Bradley Speigner. Martin Wood has provided more recent code updates and improvements.
-
-If you use this code please cite:
+This repository is a development to the code included in the Python package [`occupationcoder`](https://github.com/aeturrell/occupationcoder), with the original codebase by by Jyldyz Djumalieva, [Arthur
+Turrell](http://aeturrell.github.io/home), David Copple, James
+Thurgood, and Bradley Speigner:
 
 Turrell, A., Speigner, B., Djumalieva, J., Copple, D., & Thurgood, J.
 (2019). `Transforming Naturally Occurring Text Data Into Economic
@@ -45,12 +36,18 @@ Bureau of Economic Research.
       institution={National Bureau of Economic Research}
     }
 
-* Documentation: https://occupationcoder.readthedocs.io.
+
+The code contained within this repository is provided 'as is' for the purpose of coding survey data to international coding schemes.
+The code has been set up ready to code for the International Standard Classification of Occupations (ISCO) and the International Standard of Industrial Classification (ISIC) while retaining functionality for the UK 3-digit Standard Occupational Classification (SOC) coding scheme.
+
+For other coding schemes, there is a README <filename> That outlines how to build your own dictionaries for use in this system.
+We cannot guarantee the effectiveness of this method with other coding schemes due to the nature of differing detail between schemes.
+
 
 Pre-requisites
 ~~~~~~~~~~~~~~
 
-See `setup.py` for a full list of Python packages.
+See `requirements.txt` for a full list of Python packages.
 
 occupationcoder is built on top of `NLTK <http://www.nltk.org/>`__ and
 uses 'Wordnet' (a corpora, number 82 on their list) and the Punkt
@@ -67,7 +64,7 @@ with the Anaconda distribution of Python. You can install these via pip
 (if you have access to the internet) or download the relevant binaries
 and install them manually.
 
-File and folder description
+File and folder description - NEEDS UPDATING FOR NEW FOLDER STRUCTURE = COPY FROM NORMAL NSA PACKAGE AND MAKE ADJUSTMENTS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  ``occupationcoder/coder.py`` applies SOC codes to job descriptions
@@ -81,21 +78,7 @@ File and folder description
 -  ``occupationcoder/tests/test_vacancies.csv`` contains 'test' vacancies 
    to run the code on, used by unittests, accessible by you!
 
-Installation via terminal using pip
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download the package and navigate to the download directory. Then use
-
-.. code-block:: shell
-
-    python setup.py sdist
-    cd dist
-    pip install occupationcoder-<version>.tar.gz
-
-The first line creates the .tar.gz file, the second navigates to the
-directory with the packaged code in, and the third line installs the
-package. The version number to use will be evident from the name of the
-.tar.gz file.
 
 Running the code as a python script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,18 +153,6 @@ To run the tests in your virtual environment, use
 
 in the top level occupationcoder directory. Look in ``test_occupationcoder.py`` for what is run and for examples of use. The output appears in the 'processed\_jobs.csv' file in the outputs/
 folder.
-
-Acknowledgements
-~~~~~~~~~~~~~~~~
-
-We are very grateful to Emmet Cassidy for testing this algorithm.
-
-Disclaimer
-~~~~~~~~~~
-
-This code is provided 'as is'. We would love it if you made it better or
-extended it to work for other countries. All views expressed are our
-personal views, not those of any employer.
 
 
 Credits
