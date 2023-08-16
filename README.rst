@@ -5,11 +5,12 @@ occupationcoder
 Disclaimer
 ~~~~~~~~~~
 
-This code is provided 'as is'. We would love it if you made it better or
-extended it to work for other countries. All views expressed are our
+This code is provided 'as is'. All views expressed are our
 personal views, not those of any employer.
 
-Colleagues at the Office for National Statistics Data Science Campus are not responsible for responding to requests for additional features.
+The accuracy and quality of outputs generated from the tools presented in this codebase are the sole responsibility of the user. 
+
+Colleagues at the Office for National Statistics Data Science Campus will strive to address any specific issues with the code as presented, but do not commit to responding to or implementing additional feature requests, or to practical support in applying the code in specific workflows. 
 
 This approach to occupation coding has only been tested with data written in English, there is no guarantee it will work for other languages.
 

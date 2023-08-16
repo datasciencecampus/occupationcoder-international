@@ -68,7 +68,7 @@ Ready to contribute? Here's how to set up `occupationcoder` for local developmen
 
 3. Create a virtualenv for development. The following steps assume the use of the venv library:
 
-    $ mpython3 -m venv occupationcoder
+    $ python3 -m venv occupationcoder
 
 4. Create a branch for local development::
 
