@@ -10,6 +10,9 @@ load_speed_test_results.csv
 # Outputs folder
 Outputs/
 
+# Data folder
+Data/
+
 # exception for the Outputs folder (so that it’s available)
 !Outputs/.gitkeep
 
