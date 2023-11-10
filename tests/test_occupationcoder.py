@@ -10,8 +10,7 @@ import subprocess
 
 import pandas as pd
 
-from occupationcoder import coder
-import occupationcoder.cleaner as cl
+from occupationcoder import coder, cleaner
 
 SAMPLE_SIZE = 100000
 
@@ -22,68 +21,106 @@ class TestOccupationcoder(unittest.TestCase):
     def setUp(self):
         """Set up test fixtures, if any."""
         # The expected cleaned titles to our test data
-        self.expected_titles = ['physicist', 'economist', 'ground worker']
+        self.expected_titles = ["physicist", "economist", "ground worker"]
         # The SOC codes that TFIDF is expected to suggest for three examples
-        self.expected_codes = ['242', '311', '212', '215', '211',
-                               '353', '412', '215', '242', '211',
-                               '242', '533', '243', '912', '323']
+        self.expected_codes = [
+            "242",
+            "311",
+            "212",
+            "215",
+            "211",
+            "353",
+            "412",
+            "215",
+            "242",
+            "211",
+            "242",
+            "533",
+            "243",
+            "912",
+            "323",
+        ]
 
         # Load the three example records
         self.test_df = pd.read_csv(os.path.join("tests", "test_vacancies.csv"))
 
         # Instantiate matching class
-        self.matcher = coder.SOCCoder()
+        self.matcher = coder.Coder(scheme="soc", output="single")
+        self.isco_matcher = coder.Coder(scheme="isco")
+        self.cl = cleaner.Cleaner()
 
     def tearDown(self):
         """Tear down test fixtures, if any."""
 
     def test_clean_titles(self):
-        """ Checks that results of title cleaning are as expected """
-        clean_titles = self.test_df['job_title'].apply(cl.simple_clean)
+        """Checks that results of title cleaning are as expected"""
+        clean_titles = self.test_df["job_title"].apply(self.cl.simple_clean)
         for title in clean_titles:
             self.assertIn(title, self.expected_titles)
 
     def test_code_exact_matcher(self):
-        """ Results of exact title matching """
-        clean_titles = self.test_df['job_title'].apply(cl.simple_clean)
+        """Results of exact title matching"""
+        clean_titles = self.test_df["job_title"].apply(self.cl.simple_clean)
         matches = clean_titles.apply(self.matcher.get_exact_match)
         for match in matches:
-            self.assertIn(match, ['211', '242', None])
+            self.assertIn(match, ["211", "242", None])
+
+    def test_isco_exact_match(self):
+        """Tests the ability for coder to access ISCO dictionaries correctly"""
+        clean_titles = self.test_df["job_title"].apply(self.cl.simple_clean)
+        matches = clean_titles.apply(self.isco_matcher.get_exact_match)
+        for match in matches:
+            self.assertIn(match, ["2111", "2631", None])
 
     def test_code_tfidf_matcher(self):
-        """ TF-IDF similarity suggestions for categories? """
+        """TF-IDF similarity suggestions for categories?"""
         df = self.test_df.copy()
-        df['clean_title'] = df['job_title'].apply(cl.simple_clean)
-        df['clean_sector'] = df['job_sector']\
-            .apply(lambda x: cl.simple_clean(x, known_only=False))
-        df['clean_desc'] = df['job_description']\
-            .apply(lambda x: cl.simple_clean(x, known_only=False))
-
+        df["clean_title"] = df["job_title"].apply(self.cl.simple_clean)
+        df["clean_sector"] = df["job_sector"].apply(
+            lambda x: self.cl.simple_clean(x, known_only=False)
+        )
+        df["clean_desc"] = df["job_description"].apply(
+            lambda x: self.cl.simple_clean(x, known_only=False)
+        )
         for index, row in df.iterrows():
-            clean = " ".join([row['clean_title'],
-                              row['clean_sector'],
-                              row['clean_desc']])
+            clean = " ".join(
+                [row["clean_title"], row["clean_sector"], row["clean_desc"]]
+            )
             SOC_codes = self.matcher.get_tfidf_match(clean)
             for code in SOC_codes:
                 self.assertIn(code, self.expected_codes)
 
     def test_code_record(self):
-        """ Confirm it correctly runs on our example single record """
-        result = self.matcher\
-                     .code_record(title='Physicist',
-                                  sector='Professional scientific',
-                                  description='Calculations of the universe')
+        """Confirm it correctly runs on our example single record"""
+        result = self.matcher.code_record(
+            title="Physicist",
+            sector="Professional scientific",
+            description="Calculations of the universe",
+        )
 
-        self.assertEqual(result, '211')
+        self.assertEqual(result, "211")
 
     def test_code_data_frame(self):
         """Running the included examples from a file."""
-        df = pd.read_csv(os.path.join('tests', 'test_vacancies.csv'))
-        df = self.matcher.code_data_frame(df,
-                                          title_column="job_title",
-                                          sector_column="job_sector",
-                                          description_column="job_description")
-        self.assertEqual(df['SOC_code'].to_list(), ['211', '242', '912'])
+        df = pd.read_csv(os.path.join("tests", "test_vacancies.csv"))
+        df = self.matcher.code_data_frame(
+            df,
+            title_column="job_title",
+            sector_column="job_sector",
+            description_column="job_description",
+        )
+        self.assertEqual(df["SOC_code"].to_list(), ["211", "242", "912"])
+
+    def test_multi_code_output(self):
+        """Running samples from file and getting codes and scores out using ISCO"""
+        df = pd.read_csv(os.path.join("tests", "test_vacancies.csv"))
+        df = self.isco_matcher.code_data_frame(
+            df,
+            title_column="job_title",
+            sector_column="job_sector",
+            description_column="job_description",
+        )
+        self.assertEqual(df["prediction 1"].to_list(), ["2111", "2631", "3333"])
 
     # def test_parallel_code_data_frame(self):
     #     """
@@ -101,17 +138,24 @@ class TestOccupationcoder(unittest.TestCase):
     #     self.assertEqual(df['SOC_code'].to_list(), ['211', '242', '912'])
 
     def test_command_line(self):
-        """ Test code execution at command line """
+        """Test code execution at command line"""
 
         # sys.executable returns current python executable, ensures code is run
         # in same environment from which tests are called
-        subprocess.run([sys.executable, '-m',
-                        'occupationcoder.coder',
-                        'tests/test_vacancies.csv'])
-        df = pd.read_csv(os.path.join('occupationcoder',
-                                      'outputs',
-                                      'processed_jobs.csv'))
-        self.assertEqual(df['SOC_code'].to_list(), [211, 242, 912])
+        subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "occupationcoder.coder",
+                "--in_file=tests/test_vacancies.csv",
+                "--scheme=soc",
+                "--output=single",
+            ]
+        )
+        df = pd.read_csv(
+            os.path.join("occupationcoder", "outputs", "processed_jobs.csv")
+        )
+        self.assertEqual(df["SOC_code"].to_list(), [211, 242, 912])
 
     def manual_load_test(self):
         """
@@ -120,9 +164,7 @@ class TestOccupationcoder(unittest.TestCase):
         Does not execute as part of automated tests.
         """
         # Multiply up that dataset to many, many rows so we can test time taken
-        big_df = self.test_df.sample(SAMPLE_SIZE,
-                                     replace=True,
-                                     ignore_index=True)
+        big_df = self.test_df.sample(SAMPLE_SIZE, replace=True, ignore_index=True)
         print("Size of test dataset: {}".format(big_df.shape[0]))
 
         # Time only the actual code assignment process
@@ -131,10 +173,10 @@ class TestOccupationcoder(unittest.TestCase):
             big_df,
             title_column="job_title",
             sector_column="job_sector",
-            description_column="job_description"
-            )
+            description_column="job_description",
+        )
         print(_.shape)
-        print(_[['job_title', 'SOC_code']].head(5))
+        print(_[["job_title", "SOC_code"]].head(5))
         proc_toc = time.perf_counter()
         print("Coding process ran in: {}".format(proc_toc - proc_tic))
 
@@ -145,19 +187,18 @@ class TestOccupationcoder(unittest.TestCase):
         Does not execute as part of automated tests.
         """
         # Multiply up that dataset to many, many rows so we can test time taken
-        big_df = self.test_df.sample(SAMPLE_SIZE,
-                                     replace=True,
-                                     ignore_index=True)
+        big_df = self.test_df.sample(SAMPLE_SIZE, replace=True, ignore_index=True)
         print("Size of test dataset: {}".format(big_df.shape[0]))
 
         # Time only the actual code assignment process
         proc_tic = time.perf_counter()
-        _ = self.matcher\
-                .parallel_code_data_frame(big_df,
-                                          title_column="job_title",
-                                          sector_column="job_sector",
-                                          description_column="job_description")
+        _ = self.matcher.parallel_code_data_frame(
+            big_df,
+            title_column="job_title",
+            sector_column="job_sector",
+            description_column="job_description",
+        )
         print(_.shape)
-        print(_[['job_title', 'SOC_code']].head(5))
+        print(_[["job_title", "SOC_code"]].head(5))
         proc_toc = time.perf_counter()
         print("Coding process ran in: {}".format(proc_toc - proc_tic))

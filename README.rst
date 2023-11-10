@@ -1,48 +1,27 @@
 ===============
-occupationcoder
+occupationcoder-ext
 ===============
 
-Disclaimer
-~~~~~~~~~~
-
-This code is provided 'as is'. All views expressed are our
-personal views, not those of any employer.
-
-The accuracy and quality of outputs generated from the tools presented in this codebase are the sole responsibility of the user. 
-
-Colleagues at the Office for National Statistics Data Science Campus will strive to address any specific issues with the code as presented, but do not commit to responding to or implementing additional feature requests, or to practical support in applying the code in specific workflows. 
-
-This approach to occupation coding has only been tested with data written in English, there is no guarantee it will work for other languages.
-
-
-A tool to assign standard occupational classification codes to job vacancy descriptions
----------------------------------------------------------------------------------------
+A tool to assign standard occupational classification codes to job descriptions
+-------------------------------------------------------------------------------
 
 This repository is a development to the code included in the Python package [`occupationcoder`](https://github.com/aeturrell/occupationcoder), with the original codebase by by Jyldyz Djumalieva, [Arthur
 Turrell](http://aeturrell.github.io/home), David Copple, James
-Thurgood, and Bradley Speigner:
+Thurgood, and Bradley Speigner.
 
-Turrell, A., Speigner, B., Djumalieva, J., Copple, D., & Thurgood, J.
-(2019). `Transforming Naturally Occurring Text Data Into Economic
-Statistics: The Case of Online Job Vacancy
-Postings <https://www.nber.org/papers/w25837>`__ (No. w25837). National
-Bureau of Economic Research.
+This updated version of the package (1) allows for the coding of job descriptions to the [International Standard Classification of Occupations 2008 (ISCO)](https://www.ilo.org/public/english/bureau/stat/isco/isco08/), while retaining original functionality for the UK 3-digit [Standard Occupational Classification (SOC) coding scheme](https://www.ons.gov.uk/methodology/classificationsandstandards/standardoccupationalclassificationsoc); and (2) provides additional functionality to generate suitable dictionaries for the coding to any other arbitrary coding scheme, provided the scheme is supplied in a similar acceptable format.
 
-::
+For coding to schemes other than SOC or ISCO, there is a README <filename> That outlines how to build your own dictionaries for use in this system.
+We cannot guarantee the effectiveness of this method with other coding schemes due to the nature of differing detail between schemes.
 
-    @techreport{turrell2019transforming,
-      title={Transforming naturally occurring text data into economic statistics: The case of online job vacancy postings},
-      author={Turrell, Arthur and Speigner, Bradley and Djumalieva, Jyldyz and Copple, David and Thurgood, James},
-      year={2019},
-      institution={National Bureau of Economic Research}
-    }
-
+**Disclaimer**
+~~~~~~~~~~
 
 The code contained within this repository is provided 'as is' for the purpose of coding survey data to international coding schemes.
-The code has been set up ready to code for the International Standard Classification of Occupations (ISCO) and the International Standard of Industrial Classification (ISIC) while retaining functionality for the UK 3-digit Standard Occupational Classification (SOC) coding scheme.
-
-For other coding schemes, there is a README <filename> That outlines how to build your own dictionaries for use in this system.
-We cannot guarantee the effectiveness of this method with other coding schemes due to the nature of differing detail between schemes.
+We stress that -
+1. Any **use of this code is entirely at the risk of the user**, and users are fully responsible for checking whether the codebase is suitable for their use case, as well as the quality and accuracy of any outputs generated.
+2. (Co) authors of this codebase at the Office for National Statistics Data Science Campus do not commit to responding to requests for additional features or long-term maintenance of the codebase. The code is provided 'as is'.
+3. This approach to occupation coding has only been tested with data written in English, we cannot guarantee it will work for other languages.
 
 
 Pre-requisites
@@ -76,7 +55,7 @@ File and folder description - NEEDS UPDATING FOR NEW FOLDER STRUCTURE = COPY FRO
 -  ``occupationcoder/dictionaries`` contains the dictionaries used by
    ``occupationcoder/coder.py``
 -  ``occupationcoder/outputs`` is the default output directory
--  ``occupationcoder/tests/test_vacancies.csv`` contains 'test' vacancies 
+-  ``occupationcoder/tests/test_vacancies.csv`` contains 'test' vacancies
    to run the code on, used by unittests, accessible by you!
 
 
@@ -118,7 +97,7 @@ use
     df = pd.read_csv('path/to/foo.csv')
     df = myCoder.code_data_frame(df, title_column='job_title', sector_column='job_sector', description_column='job_description')
 
-The column name arguments are optional, shown above are default values.  
+The column name arguments are optional, shown above are default values.
 This will return a new dataframe with SOC code entries appended in a new
 column:
 
@@ -165,4 +144,3 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
-

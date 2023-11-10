@@ -1,0 +1,2838 @@
+{
+  "0110": [
+    "admiral",
+    "air commodore",
+    "air marshal",
+    "brigadier army",
+    "captain air force",
+    "captain army",
+    "captain navy",
+    "colonel army",
+    "field marshal",
+    "flight lieutenant air force",
+    "flying officer military",
+    "general army",
+    "group captain air force",
+    "lieutenant army",
+    "major army",
+    "midshipman",
+    "naval officer military",
+    "navy commander",
+    "officer cadet armed forces",
+    "second lieutenant army",
+    "squadron leader",
+    "sublieutenant navy",
+    "wing commander"
+  ],
+  "0210": [
+    "boatswain navy",
+    "flight sergeant",
+    "sergeant army",
+    "sergeant major",
+    "warrant officer"
+  ],
+  "0310": [
+    "airman",
+    "bombardier",
+    "corporal air force",
+    "corporal army",
+    "coxswain navy",
+    "gunner",
+    "infantryman woman",
+    "paratrooper",
+    "rifleman woman",
+    "seaman woman navy"
+  ],
+  "1111": [
+    "city councillor",
+    "government minister",
+    "mayor",
+    "member of parliament",
+    "president government",
+    "secretary of state",
+    "senator",
+    "state governor"
+  ],
+  "1112": [
+    "ambassador",
+    "city administrator",
+    "civil service commissioner",
+    "consul general",
+    "director general government department",
+    "director general intergovernmental organization",
+    "fire commissioner",
+    "inspector general police",
+    "permanent head government department",
+    "police chief constable",
+    "police commissioner",
+    "secretary general government administration",
+    "under secretary government"
+  ],
+  "1113": [
+    "village chief",
+    "village head"
+  ],
+  "1114": [
+    "chairperson trade union",
+    "director general employers organization",
+    "leader political party",
+    "president political party",
+    "secretary general environment protection organization",
+    "secretary general human rights organization"
+  ],
+  "1120": [
+    "chief executive",
+    "managing director",
+    "regional manager"
+  ],
+  "1211": [
+    "company secretary",
+    "finance manager"
+  ],
+  "1212": [
+    "industrial relations manager",
+    "personnel manager",
+    "recruitment manager"
+  ],
+  "1213": [
+    "corporate planning manager",
+    "policy manager",
+    "strategic planning manager"
+  ],
+  "1219": [
+    "administrative services manager",
+    "cleaning services manager",
+    "corporate services manager",
+    "facilities manager"
+  ],
+  "1221": [
+    "marketing manager",
+    "sales manager"
+  ],
+  "1222": [
+    "advertising manager",
+    "public relations manager"
+  ],
+  "1223": [
+    "product development manager",
+    "research manager"
+  ],
+  "1311": [
+    "forestry manager",
+    "plantation manager",
+    "ranch manager"
+  ],
+  "1312": [
+    "aquaculture production manager",
+    "fishing operations manager",
+    "shore captain fishing",
+    "trawler manager"
+  ],
+  "1321": [
+    "manufacturer",
+    "manufacturing manager",
+    "production and operations manager manufacturing"
+  ],
+  "1322": [
+    "mine manager",
+    "production manager mine",
+    "production manager oil and gas extraction",
+    "production manager quarry",
+    "quarry manager"
+  ],
+  "1323": [
+    "civil engineering project manager",
+    "construction project manager",
+    "project builder"
+  ],
+  "1324": [
+    "bus station manager",
+    "logistics manager",
+    "purchasing manager",
+    "railway station manager",
+    "railway station master",
+    "supply and distribution manager",
+    "supply chain manager",
+    "transport company manager",
+    "urban transit system manager",
+    "warehouse manager"
+  ],
+  "1330": [
+    "application development manager",
+    "chief information officer",
+    "data operations manager",
+    "data processing manager",
+    "ict development manager",
+    "information systems director",
+    "information technology manager it manager",
+    "internet service provider",
+    "network manager"
+  ],
+  "1341": [
+    "child care centre managers"
+  ],
+  "1342": [
+    "chief public health officer",
+    "clinical director",
+    "community health care coordinator",
+    "director of nursing",
+    "health facility administrator",
+    "hospital matron",
+    "medical administrator"
+  ],
+  "1343": [
+    "examples of occupations classified here",
+    "aged care home director",
+    "community aged care coordinator",
+    "nursing home director",
+    "retirement village coordinator"
+  ],
+  "1344": [
+    "community centre manager",
+    "family services manager",
+    "housing services manager",
+    "welfare centre manager"
+  ],
+  "1345": [
+    "college director",
+    "dean university",
+    "head teacher",
+    "school principal"
+  ],
+  "1346": [
+    "bank manager",
+    "building society manager",
+    "credit union manager",
+    "financial institution branch manager",
+    "insurance agency manager"
+  ],
+  "1349": [
+    "archives manager",
+    "art gallery manager",
+    "correctional services manager",
+    "legal service manager",
+    "library manager",
+    "museum manager",
+    "police superintendent",
+    "prison governor"
+  ],
+  "1411": [
+    "hotel manager",
+    "motel manager",
+    "youth hostel manager"
+  ],
+  "1412": [
+    "cafe manager",
+    "catering manager",
+    "restaurant manager"
+  ],
+  "1420": [
+    "grocery manager",
+    "retail manager",
+    "shop manager",
+    "supermarket manager"
+  ],
+  "1431": [
+    "amusement park manager",
+    "billiards or pool hall manager",
+    "casino manager",
+    "cinema manager",
+    "leisure centre manager",
+    "riding school manager",
+    "sports centre manager",
+    "theatre manager",
+    "theme park manager"
+  ],
+  "1439": [
+    "camp site manager",
+    "caravan park manager",
+    "conference centre manager",
+    "contact centre manager",
+    "shopping centre manager",
+    "travel agency manager"
+  ],
+  "2111": [
+    "astronomer",
+    "medical physicist",
+    "nuclear physicist",
+    "physicist"
+  ],
+  "2112": [
+    "climatologist",
+    "hydrometeorologist",
+    "meteorologist",
+    "weather forecaster"
+  ],
+  "2113": [
+    "chemist"
+  ],
+  "2114": [
+    "geological oceanographer",
+    "geologist",
+    "geophysical oceanographer",
+    "geophysicist",
+    "geoscientist"
+  ],
+  "2120": [
+    "actuary",
+    "demographer",
+    "mathematician",
+    "operations research analyst",
+    "statistician"
+  ],
+  "2131": [
+    "animal behaviourist",
+    "bacteriologist",
+    "biochemist",
+    "biologist",
+    "biomedical researcher",
+    "biotechnologist",
+    "botanist",
+    "cell geneticist",
+    "marine biologist",
+    "microbiologist",
+    "molecular biologist",
+    "molecular geneticist",
+    "pharmacologist",
+    "zoologist"
+  ],
+  "2132": [
+    "agronomist",
+    "fisheries adviser",
+    "forestry adviser",
+    "forestry scientist",
+    "horticultural scientist",
+    "silviculturist",
+    "soil scientist"
+  ],
+  "2133": [
+    "air pollution analyst",
+    "conservation officer",
+    "conservation scientist",
+    "ecologist",
+    "environmental adviser",
+    "environmental auditor",
+    "environmental consultant",
+    "environmental research scientist",
+    "environmental scientist",
+    "park ranger",
+    "water quality analyst"
+  ],
+  "2141": [
+    "industrial efficiency engineer",
+    "industrial engineer",
+    "industrial plant engineer",
+    "production engineer"
+  ],
+  "2142": [
+    "civil engineer",
+    "geotechnical engineer",
+    "structural engineer"
+  ],
+  "2143": [
+    "air pollution control engineer",
+    "environmental analyst",
+    "environmental engineer",
+    "environmental remediation specialist",
+    "waste water process engineer"
+  ],
+  "2144": [
+    "aeronautical engineer",
+    "engine designer",
+    "marine architect",
+    "marine engineer",
+    "mechanical engineer"
+  ],
+  "2145": [
+    "chemical engineer",
+    "fuel technologist",
+    "plastics technologist",
+    "refinery process engineer"
+  ],
+  "2146": [
+    "extractive metallurgist",
+    "mining engineer",
+    "petroleum and natural gas extraction engineer"
+  ],
+  "2149": [
+    "biomedical engineer",
+    "explosive ordnance engineer",
+    "marine salvage engineer",
+    "materials engineer",
+    "nuclear power generation engineer",
+    "optical engineer",
+    "quantity surveyor",
+    "safety engineer"
+  ],
+  "2151": [
+    "electrical engineer",
+    "electric power generation engineer",
+    "electromechanical engineer"
+  ],
+  "2152": [
+    "computer hardware engineer",
+    "electronics engineer",
+    "instrumentation engineer"
+  ],
+  "2153": [
+    "broadcast engineer",
+    "telecommunications engineer",
+    "telecommunications engineering technologist"
+  ],
+  "2161": [
+    "building architect",
+    "interior architect"
+  ],
+  "2162": [
+    "landscape architect"
+  ],
+  "2163": [
+    "costume designer",
+    "fashion designer",
+    "industrial designer",
+    "jewellery designer"
+  ],
+  "2164": [
+    "land planner",
+    "traffic planner",
+    "urban planner"
+  ],
+  "2165": [
+    "aerial surveyor",
+    "cadastral surveyor",
+    "cartographer",
+    "hydrographic surveyor",
+    "land surveyor",
+    "mine surveyor",
+    "photogrammetrist"
+  ],
+  "2166": [
+    "animator",
+    "commercial artists",
+    "computer games designer",
+    "digital artist",
+    "graphic designer",
+    "illustrator",
+    "multimedia designer",
+    "publication designer",
+    "web designer"
+  ],
+  "2211": [
+    "district medical doctor therapist",
+    "family medical practitioner",
+    "general practitioner",
+    "medical doctor general",
+    "medical officer general",
+    "physician general",
+    "primary health care physician",
+    "resident medical officer specializing in general practice"
+  ],
+  "2212": [
+    "anaesthetist",
+    "cardiologist",
+    "emergency medicine specialist",
+    "gynaecologist",
+    "obstetrician",
+    "ophthalmologist",
+    "paediatrician",
+    "pathologist",
+    "preventive medicine specialist",
+    "psychiatrist",
+    "radiation oncologist",
+    "radiologist",
+    "resident medical officer in specialist training",
+    "specialist medical practitioner public health",
+    "specialist physician internal medicine",
+    "specialist physician nuclear medicine",
+    "surgeon"
+  ],
+  "2221": [
+    "clinical nurse consultant",
+    "district nurse",
+    "nurse anaesthetist",
+    "nurse educator",
+    "nurse practitioner",
+    "operating theatre nurse",
+    "professional nurse",
+    "public health nurse",
+    "specialist nurse"
+  ],
+  "2222": [
+    "professional midwife"
+  ],
+  "2230": [
+    "acupuncturist",
+    "ayurvedic practitioner",
+    "chinese herbal medicine practitioner",
+    "homeopath",
+    "naturopath",
+    "unani practitioner"
+  ],
+  "2240": [
+    "examples of occupations classified here",
+    "advanced care paramedic",
+    "clinical officer paramedical",
+    "feldscher",
+    "primary care paramedic",
+    "surgical technician"
+  ],
+  "2250": [
+    "animal pathologist",
+    "veterinarian",
+    "veterinary epidemiologist",
+    "veterinary intern",
+    "veterinary surgeon"
+  ],
+  "2261": [
+    "dental practitioner",
+    "dental surgeon",
+    "dentist",
+    "endodontist",
+    "oral and maxillofacial surgeon",
+    "oral pathologist",
+    "orthodontist",
+    "paedodontist",
+    "periodontist",
+    "prosthodontist",
+    "stomatologist"
+  ],
+  "2262": [
+    "dispensing chemist",
+    "hospital pharmacist",
+    "industrial pharmacist",
+    "retail pharmacist"
+  ],
+  "2263": [
+    "environmental health officer",
+    "occupational health and safety adviser",
+    "occupational hygienist",
+    "radiation protection expert"
+  ],
+  "2264": [
+    "geriatric physical therapist",
+    "manipulative therapist",
+    "orthopaedic physical therapist",
+    "paediatric physical therapist",
+    "physical therapist",
+    "physiotherapist"
+  ],
+  "2265": [
+    "clinical dietician",
+    "food service dietician",
+    "nutritionist",
+    "public health nutritionist",
+    "sports nutritionist"
+  ],
+  "2266": [
+    "audiologist",
+    "language therapist",
+    "speech pathologist",
+    "speech therapist"
+  ],
+  "2267": [
+    "ophthalmic optician",
+    "optometrist",
+    "orthoptist"
+  ],
+  "2269": [
+    "arts therapist",
+    "chiropractor",
+    "dance and movement therapist",
+    "occupational therapist",
+    "osteopath",
+    "podiatrist",
+    "recreational therapist"
+  ],
+  "2310": [
+    "higher education lecturer",
+    "professor",
+    "university lecturer",
+    "university tutor"
+  ],
+  "2320": [
+    "automotive technology instructor",
+    "cosmetology instructor",
+    "vocational education teacher"
+  ],
+  "2330": [
+    "high school teacher",
+    "secondary education teacher"
+  ],
+  "2341": [
+    "primary school teacher"
+  ],
+  "2342": [
+    "early childhood educator",
+    "pre school teacher"
+  ],
+  "2351": [
+    "curriculum coordinator",
+    "curriculum developer",
+    "education methods specialist",
+    "schools inspector",
+    "teaching aids specialist"
+  ],
+  "2352": [
+    "learning disabilities special education teacher",
+    "learning support teacher",
+    "remedial teacher",
+    "teacher of gifted children",
+    "teacher of the hearing impaired",
+    "teacher of the sight impaired"
+  ],
+  "2353": [
+    "intensive language teacher",
+    "migrant education teacher",
+    "practical language teacher",
+    "second language teacher"
+  ],
+  "2354": [
+    "guitar teacher private tuition",
+    "piano teacher private tuition",
+    "singing teacher private tuition",
+    "violin teacher private tuition"
+  ],
+  "2355": [
+    "dance teacher private tuition",
+    "drama teacher private tuition",
+    "painting teacher private tuition",
+    "sculpture teacher private tuition"
+  ],
+  "2356": [
+    "computer trainer",
+    "software trainer"
+  ],
+  "2359": [
+    "literacy tutor private tuition",
+    "mathematics coach private tuition",
+    "school counsellor",
+    "student adviser"
+  ],
+  "2411": [
+    "accountant",
+    "auditor",
+    "certified accountant",
+    "chartered accountant",
+    "financial controller",
+    "insolvency trustee",
+    "management accountant",
+    "tax accountant"
+  ],
+  "2412": [
+    "estate planner",
+    "financial planner",
+    "investment adviser"
+  ],
+  "2413": [
+    "bond analyst",
+    "investment analyst",
+    "securities consultant"
+  ],
+  "2421": [
+    "business consultant",
+    "management consultant",
+    "organization and methods analyst"
+  ],
+  "2422": [
+    "intelligence officer",
+    "policy analyst",
+    "political adviser"
+  ],
+  "2423": [
+    "careers adviser",
+    "human resource expert",
+    "job analyst",
+    "occupational analyst",
+    "outplacement expert",
+    "personnel specialist",
+    "recruitment officer",
+    "vocational guidance counsellor"
+  ],
+  "2424": [
+    "staff development officer",
+    "training officer",
+    "workforce development specialist"
+  ],
+  "2431": [
+    "advertising specialist",
+    "marketing specialist",
+    "market research analyst"
+  ],
+  "2432": [
+    "press liaison officer",
+    "publicity agent",
+    "public relations copy writer",
+    "public relations officer"
+  ],
+  "2433": [
+    "sales representative industrial products",
+    "sales representative medical and pharmaceutical products",
+    "technical sales representative"
+  ],
+  "2434": [
+    "sales representative communications technology",
+    "sales representative computers"
+  ],
+  "2511": [
+    "business analyst it",
+    "computer scientist",
+    "information systems analyst",
+    "systems consultant",
+    "systems designer it"
+  ],
+  "2512": [
+    "programmer analyst",
+    "software designer",
+    "software developer",
+    "software engineer"
+  ],
+  "2513": [
+    "animation programmer",
+    "computer games programmer",
+    "internet developer",
+    "multimedia programmer",
+    "website architect",
+    "website developer"
+  ],
+  "2514": [
+    "applications programmer"
+  ],
+  "2519": [
+    "quality assurance analyst computers",
+    "software tester",
+    "systems tester"
+  ],
+  "2521": [
+    "data administrator",
+    "database administrator",
+    "database analyst",
+    "database architect"
+  ],
+  "2522": [
+    "network administrator",
+    "systems administrator computers"
+  ],
+  "2523": [
+    "communications analyst computers",
+    "network analyst"
+  ],
+  "2529": [
+    "data miner",
+    "digital forensic specialist",
+    "security specialist ict"
+  ],
+  "2611": [
+    "attorney",
+    "barrister",
+    "lawyer",
+    "prosecutor",
+    "solicitor"
+  ],
+  "2612": [
+    "chief justice",
+    "judge",
+    "magistrate"
+  ],
+  "2619": [
+    "coroner",
+    "jurist except lawyer or judge",
+    "notary"
+  ],
+  "2621": [
+    "archivist",
+    "art gallery curator",
+    "museum curator",
+    "records manager"
+  ],
+  "2622": [
+    "bibliographer",
+    "cataloguer",
+    "librarian"
+  ],
+  "2631": [
+    "econometrician",
+    "economic adviser",
+    "economic analyst",
+    "economist",
+    "labour economist"
+  ],
+  "2632": [
+    "anthropologist",
+    "archaeologist",
+    "criminologist",
+    "ethnologist",
+    "geographer",
+    "sociologist"
+  ],
+  "2633": [
+    "genealogist",
+    "historian",
+    "philosopher",
+    "political scientist"
+  ],
+  "2634": [
+    "clinical psychologist",
+    "educational psychologist",
+    "organizational psychologist",
+    "psychotherapist",
+    "sports psychologist"
+  ],
+  "2635": [
+    "addictions counsellor",
+    "bereavement counsellor",
+    "child and youth counsellor",
+    "district social welfare officer",
+    "family counsellor",
+    "marriage counsellor",
+    "parole officer",
+    "probation officer",
+    "sexual assault counsellor",
+    "social worker",
+    "women s welfare organizer"
+  ],
+  "2636": [
+    "bonze",
+    "minister of religion",
+    "poojari",
+    "priest",
+    "rabbi"
+  ],
+  "2641": [
+    "author",
+    "book editor",
+    "essayist",
+    "indexer",
+    "interactive media writer",
+    "novelist",
+    "playwright",
+    "script writer",
+    "speech writer",
+    "technical communicator",
+    "technical writer",
+    "writer"
+  ],
+  "2642": [
+    "journalist",
+    "newspaper editor",
+    "newspaper reporter",
+    "sports writer",
+    "sub editor",
+    "tv radio news producer",
+    "tv radio news reporter"
+  ],
+  "2643": [
+    "interpreter",
+    "lexicographer",
+    "philologist",
+    "sign language interpreter",
+    "subtitler",
+    "translator",
+    "translator reviser"
+  ],
+  "2651": [
+    "cartoonist",
+    "ceramic artist",
+    "illustrator",
+    "picture restorer",
+    "portrait painter",
+    "sculptor"
+  ],
+  "2652": [
+    "band leader",
+    "composer",
+    "instrumentalist",
+    "music conductor",
+    "night club musician",
+    "night club singer",
+    "orchestrator",
+    "singer",
+    "street musician",
+    "street singer"
+  ],
+  "2653": [
+    "choreographer",
+    "ballet dancer",
+    "night club dancer",
+    "street dancer"
+  ],
+  "2654": [
+    "documentary director",
+    "film editor",
+    "motion picture director",
+    "photography director",
+    "stage director",
+    "technical director",
+    "technical television or radio director",
+    "theatre producer"
+  ],
+  "2655": [
+    "actor",
+    "mime artist",
+    "storyteller"
+  ],
+  "2656": [
+    "news anchor",
+    "radio announcer",
+    "sports announcer",
+    "talk show host hostess",
+    "television announcer",
+    "traffic reporter",
+    "weather reporter"
+  ],
+  "2659": [
+    "acrobat",
+    "aerialist",
+    "clown",
+    "hypnotist",
+    "magician",
+    "puppeteer",
+    "stand up comedian",
+    "ventriloquist"
+  ],
+  "3111": [
+    "chemistry technician",
+    "geology technician",
+    "meteorology technician",
+    "physics technician"
+  ],
+  "3112": [
+    "building inspector",
+    "building surveyor",
+    "civil engineering technician",
+    "clerk of works",
+    "fire inspector",
+    "fire prevention specialist",
+    "geotechnical technician",
+    "surveying technician"
+  ],
+  "3113": [
+    "electrical engineering technician",
+    "electric power transmission engineering technician"
+  ],
+  "3114": [
+    "electronics engineering technician"
+  ],
+  "3115": [
+    "aeronautics engineering technician",
+    "marine engineering technician",
+    "marine surveyor",
+    "mechanical engineering estimator",
+    "mechanical engineering technician"
+  ],
+  "3116": [
+    "chemical engineering estimator",
+    "chemical engineering technician"
+  ],
+  "3117": [
+    "metallurgical technician",
+    "mines inspector",
+    "mining engineering technician"
+  ],
+  "3118": [
+    "draughtsperson",
+    "technical illustrator"
+  ],
+  "3119": [
+    "engineering technician production",
+    "fire investigator",
+    "forensic science technician",
+    "quantity surveying technician",
+    "robotics technician",
+    "time and motion study technician"
+  ],
+  "3121": [
+    "mine deputy",
+    "mine supervisor",
+    "mine under manager",
+    "quarry supervisor"
+  ],
+  "3122": [
+    "area coordinator manufacturing",
+    "assembly supervisor",
+    "finishing supervisor",
+    "production supervisor manufacturing"
+  ],
+  "3123": [
+    "building construction supervisor",
+    "site manager construction"
+  ],
+  "3131": [
+    "distribution control operator",
+    "electric power plant operator",
+    "generating station operator",
+    "hydroelectric power plant operator",
+    "nuclear power plant operator",
+    "solar power plant operator"
+  ],
+  "3132": [
+    "incinerator operator",
+    "liquid waste process operator",
+    "pumping station operator",
+    "sewage plant operator",
+    "wastewater operator",
+    "water treatment plant operator"
+  ],
+  "3133": [
+    "chemical filtering and separating equipment operator",
+    "chemical heat treating plant operator",
+    "chemical process technician",
+    "chemical still and reactor operator"
+  ],
+  "3134": [
+    "blender operator petroleum and natural gas refining",
+    "gas plant operator",
+    "paraffin plant operator",
+    "petroleum process operator",
+    "refinery process technician",
+    "still operator still petroleum and natural gas refining"
+  ],
+  "3135": [
+    "blast furnace operator",
+    "central control caster",
+    "rolling mill control operator"
+  ],
+  "3139": [
+    "automated assembly line operator",
+    "industrial robot controller",
+    "panel board operator pulp and paper",
+    "paper pulp refinery operator",
+    "pulping control operator",
+    "pulping technician"
+  ],
+  "3141": [
+    "bacteriology technician",
+    "biochemistry technician",
+    "herbarium technician",
+    "pharmacology technician",
+    "serology technician",
+    "tissue culture technician",
+    "zoology technician"
+  ],
+  "3142": [
+    "dairy technician",
+    "field crop technician",
+    "herd tester",
+    "horticultural technician",
+    "poultry technician"
+  ],
+  "3143": [
+    "forestry technician",
+    "silviculture technician"
+  ],
+  "3151": [
+    "ships engineer"
+  ],
+  "3152": [
+    "pilot ship",
+    "ship s captain",
+    "skipper yacht"
+  ],
+  "3153": [
+    "aerial crop sprayer",
+    "flight engineer",
+    "flying instructor",
+    "navigator flight",
+    "pilot aircraft"
+  ],
+  "3154": [
+    "air traffic controller"
+  ],
+  "3155": [
+    "example of the occupations classified here",
+    "air traffic safety engineer",
+    "air traffic safety technician"
+  ],
+  "3211": [
+    "diagnostic medical radiographer",
+    "magnetic resonance imaging technologist",
+    "mammographer",
+    "medical radiation therapist",
+    "nuclear medicine technologist",
+    "radiographer",
+    "sonographer"
+  ],
+  "3212": [
+    "blood bank technician",
+    "cytology technician",
+    "medical laboratory technician",
+    "pathology technician"
+  ],
+  "3213": [
+    "dispensing technician",
+    "pharmaceutical assistant",
+    "pharmaceutical technician"
+  ],
+  "3214": [
+    "dental mechanic",
+    "dental technician",
+    "denturist",
+    "orthopaedic appliance maker",
+    "orthotic technician",
+    "orthotist",
+    "prosthetic technician",
+    "prosthetist"
+  ],
+  "3221": [
+    "assistant nurse",
+    "associate professional nurse",
+    "enrolled nurse",
+    "practical nurse"
+  ],
+  "3222": [
+    "assistant midwife",
+    "traditional midwife"
+  ],
+  "3230": [
+    "acupuncture technician",
+    "ayurvedic technician",
+    "bonesetter",
+    "herbalist",
+    "homeopathy technician",
+    "scraping and cupping therapist",
+    "village healer",
+    "witch doctor"
+  ],
+  "3240": [
+    "artificial inseminator",
+    "veterinary assistant",
+    "veterinary nurse",
+    "veterinary vaccinator"
+  ],
+  "3251": [
+    "dental assistant",
+    "dental hygienist",
+    "dental therapist"
+  ],
+  "3252": [
+    "clinical coder",
+    "disease registry technician",
+    "health information clerk",
+    "medical records analyst",
+    "medical records clerk",
+    "medical records technician",
+    "medical records unit supervisor"
+  ],
+  "3253": [
+    "community health aide",
+    "community health promoter",
+    "community health worker",
+    "village health worker"
+  ],
+  "3254": [
+    "contact lens optician",
+    "dispensing optician"
+  ],
+  "3255": [
+    "acupressure therapist",
+    "electrotherapist",
+    "hydrotherapist",
+    "massage therapist",
+    "physical rehabilitation technician",
+    "physiotherapy technician",
+    "shiatsu therapist"
+  ],
+  "3256": [
+    "clinical assistant",
+    "medical assistant",
+    "ophthalmic assistant"
+  ],
+  "3257": [
+    "food sanitation and safety inspector",
+    "health inspector",
+    "occupational health and safety inspector",
+    "pollution inspector",
+    "production safety inspector",
+    "sanitarian",
+    "sanitary inspector"
+  ],
+  "3258": [
+    "ambulance officer",
+    "ambulance paramedic",
+    "emergency medical technician",
+    "emergency paramedic"
+  ],
+  "3259": [
+    "anaesthesia technician",
+    "family planning counsellor",
+    "hiv counsellor",
+    "respiratory therapy technician"
+  ],
+  "3311": [
+    "foreign exchange broker",
+    "foreign exchange dealer",
+    "securities broker",
+    "stocks and shares broker"
+  ],
+  "3312": [
+    "loans officer",
+    "mortgage officer"
+  ],
+  "3313": [
+    "example of the occupations classified here",
+    "accounting assistant",
+    "bookkeeper"
+  ],
+  "3314": [
+    "actuarial assistant",
+    "mathematical assistant",
+    "statistical assistant"
+  ],
+  "3315": [
+    "appraiser",
+    "claims assessor",
+    "claims inspector",
+    "insurance assessor",
+    "real estate appraiser",
+    "valuer"
+  ],
+  "3321": [
+    "insurance agent",
+    "insurance broker",
+    "insurance underwriter"
+  ],
+  "3322": [
+    "after sales service adviser",
+    "canvasser",
+    "commercial traveller"
+  ],
+  "3323": [
+    "buyer",
+    "procurement officer",
+    "purchasing agent",
+    "purchasing merchandiser",
+    "supply officer"
+  ],
+  "3324": [
+    "commodities broker",
+    "commodity futures dealer",
+    "shipping broker"
+  ],
+  "3331": [
+    "clearing agent",
+    "forwarding agent",
+    "shipping agent"
+  ],
+  "3332": [
+    "conference and event organizer",
+    "conference planner",
+    "wedding planner"
+  ],
+  "3333": [
+    "employment agent",
+    "job placement officer",
+    "labour contractor"
+  ],
+  "3334": [
+    "estate agent",
+    "property manager",
+    "realtor",
+    "salesperson real estate"
+  ],
+  "3339": [
+    "advertising salesperson",
+    "auctioneer",
+    "literary agent",
+    "musical performance agent",
+    "sports agent",
+    "theatrical agent",
+    "tour operator"
+  ],
+  "3341": [
+    "clerical supervisor",
+    "data entry supervisor",
+    "filing clerks supervisor",
+    "personnel clerks supervisor"
+  ],
+  "3342": [
+    "examples of the occupations here",
+    "legal practice manager",
+    "legal secretary"
+  ],
+  "3343": [
+    "administrative secretary",
+    "correspondence assistant",
+    "court reporter",
+    "executive assistant",
+    "personal assistant"
+  ],
+  "3344": [
+    "dental secretary",
+    "hospital ward secretary",
+    "medical insurance billing secretary",
+    "medical laboratory secretary",
+    "medical office administrative assistant",
+    "medical practice manager",
+    "medical secretary",
+    "medical stenographer",
+    "medical transcriptionist",
+    "pathology secretary",
+    "patient care secretary"
+  ],
+  "3351": [
+    "border inspector",
+    "customs inspector",
+    "customs officer",
+    "immigration officer",
+    "passport checking officer"
+  ],
+  "3352": [
+    "excise officer",
+    "taxation inspector",
+    "tax officer"
+  ],
+  "3353": [
+    "pensions officer",
+    "social benefits officer",
+    "social security claims officer"
+  ],
+  "3354": [
+    "building permit licensing officer",
+    "business permit licensing officer",
+    "licensing officer",
+    "passport officer issuing"
+  ],
+  "3355": [
+    "police detective",
+    "police inquiry agent",
+    "police inspector"
+  ],
+  "3359": [
+    "agricultural inspector",
+    "fisheries inspector",
+    "forestry inspector",
+    "prices inspector",
+    "wage inspector",
+    "weights and measures inspector"
+  ],
+  "3411": [
+    "bailiff",
+    "conveyancing clerk",
+    "court clerk",
+    "judge s clerk",
+    "justice of the peace",
+    "law clerk",
+    "legal assistant",
+    "paralegal",
+    "private detective",
+    "title searcher"
+  ],
+  "3412": [
+    "community development worker",
+    "community service worker",
+    "crisis intervention worker",
+    "disability services worker",
+    "family services worker",
+    "life skills instructor",
+    "mental health support worker",
+    "welfare support worker",
+    "women s shelter supervisor",
+    "youth services worker"
+  ],
+  "3413": [
+    "faith healer",
+    "lay preacher"
+  ],
+  "3421": [
+    "athlete",
+    "bicycle racer",
+    "boxer",
+    "chess player",
+    "footballer",
+    "golfer",
+    "hockey player",
+    "jockey",
+    "poker player",
+    "racing driver",
+    "skier",
+    "tennis player",
+    "wrestler"
+  ],
+  "3422": [
+    "referee",
+    "ski instructor",
+    "sports coach",
+    "sports official",
+    "swimming instructor"
+  ],
+  "3423": [
+    "aerobics instructor",
+    "fitness instructor",
+    "horse riding instructor",
+    "outdoor adventure guide",
+    "personal trainer",
+    "sailing instructor",
+    "underwater diving instructor"
+  ],
+  "3431": [
+    "aerial photographer",
+    "commercial photographer",
+    "industrial photographer",
+    "photographer",
+    "photo journalist",
+    "portrait photographer",
+    "scientific photographer"
+  ],
+  "3432": [
+    "display decorator",
+    "interior decorator",
+    "set designer",
+    "visual merchandiser",
+    "window dresser"
+  ],
+  "3433": [
+    "gallery technician",
+    "library technician",
+    "museum technician",
+    "taxidermist"
+  ],
+  "3434": [
+    "executive chef",
+    "head chef",
+    "pastry chef",
+    "saucier",
+    "sous chef"
+  ],
+  "3435": [
+    "body artist",
+    "floor manager broadcasting",
+    "lighting technician",
+    "programme coordinator broadcasting",
+    "prompter",
+    "property master broadcasting",
+    "script girl boy",
+    "special effects technician",
+    "stage manager",
+    "stage technician",
+    "stunt artist",
+    "stunt coordinator",
+    "tattooist",
+    "theatre technician",
+    "theatrical dresser",
+    "walker on"
+  ],
+  "3511": [
+    "computer operator",
+    "computer peripheral equipment operator",
+    "high speed computer printer operator"
+  ],
+  "3512": [
+    "communications assistant ict",
+    "computer database assistant",
+    "computer help desk operator",
+    "computer programming assistant",
+    "computer systems analysis assistant"
+  ],
+  "3513": [
+    "computer network technician",
+    "network support technician"
+  ],
+  "3514": [
+    "webmaster",
+    "website administrator",
+    "website technician"
+  ],
+  "3521": [
+    "audio visual operator",
+    "broadcasting equipment operator",
+    "broadcast technician",
+    "camera operator motion picture",
+    "camera operator video",
+    "production assistant media"
+  ],
+  "3522": [
+    "engineering technician telecommunications"
+  ],
+  "4110": [
+    "general office clerk",
+    "office clerk"
+  ],
+  "4120": [
+    "secretary",
+    "typing secretary",
+    "word processing secretary"
+  ],
+  "4131": [
+    "shorthand typist",
+    "stenographer",
+    "typist",
+    "word processor"
+  ],
+  "4132": [
+    "data entry operator",
+    "data input clerk",
+    "payment entry clerk"
+  ],
+  "4211": [
+    "bank teller",
+    "money changer",
+    "post office counter clerk"
+  ],
+  "4212": [
+    "bookmaker",
+    "croupier"
+  ],
+  "4213": [
+    "money lender",
+    "pawnbroker"
+  ],
+  "4214": [
+    "bill and account collector",
+    "charity collector",
+    "debt collector"
+  ],
+  "4221": [
+    "airline ticket agent",
+    "check in attendant",
+    "ticket issuing clerk travel",
+    "tourism information clerk",
+    "travel agency clerk",
+    "travel consultant",
+    "travel desk clerk"
+  ],
+  "4222": [
+    "customer contact centre information clerk"
+  ],
+  "4223": [
+    "answering service operator",
+    "telephone switchboard operator"
+  ],
+  "4224": [
+    "hotel front desk clerk",
+    "hotel receptionist"
+  ],
+  "4225": [
+    "counter enquiries clerk",
+    "information clerk"
+  ],
+  "4226": [
+    "medical office receptionist",
+    "receptionist"
+  ],
+  "4227": [
+    "market research interviewer",
+    "public opinion interviewer",
+    "survey interviewer"
+  ],
+  "4229": [
+    "eligibility interviewer",
+    "eligibility specialist",
+    "hospital admissions clerk"
+  ],
+  "4311": [
+    "examples of the occupations included here",
+    "accounts clerk",
+    "bookkeeping clerk",
+    "cost computing clerk"
+  ],
+  "4312": [
+    "actuarial clerk",
+    "brokerage clerk",
+    "finance clerk",
+    "insurance clerk",
+    "mortgage clerk",
+    "securities clerk",
+    "statistical clerk"
+  ],
+  "4313": [
+    "example of the occupations included here",
+    "wages clerk"
+  ],
+  "4321": [
+    "dispatch clerk stock",
+    "freight clerk",
+    "stock clerk",
+    "storeroom clerk",
+    "weighing clerk"
+  ],
+  "4322": [
+    "production clerk",
+    "schedule clerk materials"
+  ],
+  "4323": [
+    "clerical controller transport service",
+    "clerical dispatcher transport service"
+  ],
+  "4411": [
+    "library clerk",
+    "library filer"
+  ],
+  "4412": [
+    "mail clerk",
+    "post carrier",
+    "postman woman"
+  ],
+  "4413": [
+    "coding clerk",
+    "proof reading clerk"
+  ],
+  "4414": [
+    "scribe"
+  ],
+  "4415": [
+    "copying clerk",
+    "filing clerk"
+  ],
+  "4416": [
+    "human resource assistant",
+    "human resource clerk"
+  ],
+  "4419": [
+    "advertising clerk",
+    "correspondence clerk",
+    "directory compiler",
+    "press clipper",
+    "publication clerk"
+  ],
+  "5111": [
+    "cabin attendant",
+    "flight attendant",
+    "ship s steward"
+  ],
+  "5112": [
+    "bus conductor",
+    "cable car conductor",
+    "ticket inspector public transport",
+    "train conductor",
+    "tram conductor"
+  ],
+  "5113": [
+    "art gallery guide",
+    "tour escort",
+    "tourist guide"
+  ],
+  "5120": [],
+  "5131": [
+    "example of the occupations classified here",
+    "sommelier",
+    "waiter"
+  ],
+  "5132": [
+    "bartender"
+  ],
+  "5141": [
+    "barber",
+    "hair care specialist",
+    "hairdresser",
+    "hairstylist"
+  ],
+  "5142": [
+    "bath attendant",
+    "beautician",
+    "make up artist",
+    "manicurist",
+    "pedicurist",
+    "slimming consultant"
+  ],
+  "5151": [
+    "housekeeper hotel",
+    "matron housekeeping"
+  ],
+  "5152": [
+    "bed and breakfast operator",
+    "butler",
+    "domestic housekeeper"
+  ],
+  "5153": [
+    "caretaker",
+    "concierge building",
+    "janitor",
+    "sexton"
+  ],
+  "5161": [
+    "astrologer",
+    "fortune teller",
+    "numerologist",
+    "palmist"
+  ],
+  "5162": [
+    "companion",
+    "personal maid",
+    "valet"
+  ],
+  "5163": [
+    "embalmer",
+    "undertaker"
+  ],
+  "5164": [
+    "animal attendant",
+    "dog trainer",
+    "horse breaker",
+    "veterinary aide",
+    "zoo keeper"
+  ],
+  "5165": [
+    "driving instructor"
+  ],
+  "5169": [
+    "club host",
+    "club hostess",
+    "dancing partner",
+    "social escort"
+  ],
+  "5211": [
+    "kiosk salesperson",
+    "market stallholder",
+    "market vendor",
+    "street stall sales assistant"
+  ],
+  "5212": [
+    "hawker food",
+    "street food vendor"
+  ],
+  "5221": [
+    "grocer",
+    "newsagent",
+    "shopkeeper"
+  ],
+  "5222": [
+    "checkout supervisor",
+    "supermarket supervisor"
+  ],
+  "5223": [
+    "salesperson retail establishment",
+    "salesperson wholesale establishment",
+    "shop assistant"
+  ],
+  "5230": [
+    "checkout operator",
+    "service station cashier",
+    "service station console operator",
+    "store cashier",
+    "ticket issuing clerk entertainment and sporting events"
+  ],
+  "5241": [
+    "advertising model",
+    "artist s model",
+    "fashion model"
+  ],
+  "5242": [
+    "demonstrator",
+    "sales merchandiser"
+  ],
+  "5243": [
+    "door to door salesperson",
+    "door to door sales representative",
+    "party plan salesperson"
+  ],
+  "5244": [
+    "call centre salesperson",
+    "customer contact centre salesperson",
+    "internet salesperson",
+    "telemarketer",
+    "telemarketing salesperson"
+  ],
+  "5245": [
+    "marina attendant",
+    "service station attendant"
+  ],
+  "5246": [
+    "cafeteria counter attendant",
+    "salad bar attendant"
+  ],
+  "5249": [
+    "rental salesperson"
+  ],
+  "5311": [
+    "baby sitter",
+    "child care worker",
+    "creche ayah",
+    "family day care worker",
+    "nanny",
+    "out of school hours care worker"
+  ],
+  "5312": [
+    "pre school assistant",
+    "teacher s assistant"
+  ],
+  "5321": [
+    "birth assistant clinic or hospital",
+    "nursing aide clinic or hospital",
+    "patient care assistant",
+    "psychiatric aide"
+  ],
+  "5322": [
+    "home birth assistant",
+    "home care aide",
+    "nursing aide home",
+    "personal care provider"
+  ],
+  "5329": [
+    "dental aide",
+    "first aid attendant",
+    "hospital orderly",
+    "medical imaging assistant",
+    "pharmacy aide",
+    "phlebotomist",
+    "sterilization aide"
+  ],
+  "5411": [
+    "fire fighter",
+    "forest firefighter"
+  ],
+  "5412": [
+    "constable",
+    "police officer",
+    "police patrol officer"
+  ],
+  "5413": [
+    "prison guard"
+  ],
+  "5414": [
+    "bodyguard",
+    "doorkeeper",
+    "museum guard",
+    "security guard",
+    "security patrolman woman",
+    "watchman woman"
+  ],
+  "5419": [
+    "animal control officer",
+    "beach patrolman woman",
+    "crossing guard",
+    "game warden",
+    "lifeguard",
+    "traffic warden"
+  ],
+  "6111": [
+    "cereal farmer",
+    "cotton farmer",
+    "potato farmer",
+    "rice farmer",
+    "skilled farm worker field crops",
+    "sugar cane grower"
+  ],
+  "6112": [
+    "fruit farmer",
+    "rubber farmer",
+    "rubber tapper",
+    "tea grower",
+    "viticulturist"
+  ],
+  "6113": [
+    "horticulturist",
+    "landscape gardener",
+    "market gardener",
+    "mushroom cultivator"
+  ],
+  "6114": [
+    "mixed crop farmer",
+    "skilled farm worker mixed crops"
+  ],
+  "6121": [
+    "cattle farmer",
+    "dairy farmer",
+    "dog breeder",
+    "drover",
+    "goat farmer",
+    "horse breeder",
+    "shearer",
+    "sheep farmer",
+    "shepherd",
+    "stockman woman"
+  ],
+  "6122": [
+    "poultry breeder",
+    "poultry farmer",
+    "poultry tender"
+  ],
+  "6123": [
+    "examples of occupations classified here",
+    "apiarist",
+    "sericulturist"
+  ],
+  "6129": [
+    "crocodile farmer",
+    "fur farmer non domesticated animals",
+    "game bird breeder",
+    "ostrich farmer",
+    "snail breeder"
+  ],
+  "6130": [
+    "farmer mixed farming",
+    "skilled farm worker mixed farming"
+  ],
+  "6210": [
+    "charcoal burner",
+    "logger",
+    "logging climber",
+    "skilled forestry worker",
+    "timber cruiser",
+    "tree feller"
+  ],
+  "6221": [
+    "algae cultivator",
+    "fish farmer",
+    "oyster farmer",
+    "pearl cultivator",
+    "seafood farmer",
+    "skilled fish farm worker",
+    "skilled seafood farm worker"
+  ],
+  "6222": [
+    "coastal fishery skipper",
+    "fisher coastal waters",
+    "fisher inland waters"
+  ],
+  "6223": [
+    "deep sea fisher",
+    "trawler skipper"
+  ],
+  "6224": [
+    "fur trapper",
+    "seal hunter"
+  ],
+  "6310": [
+    "subsistence crop farmer",
+    "subsistence gardener",
+    "subsistence vegetable grower"
+  ],
+  "6320": [
+    "subsistence cattle farmer"
+  ],
+  "6330": [
+    "mixed subsistence farmer"
+  ],
+  "6340": [
+    "hunter gatherer",
+    "subsistence collector",
+    "subsistence diver",
+    "subsistence fisher",
+    "subsistence trapper"
+  ],
+  "7111": [
+    "house builder"
+  ],
+  "7112": [
+    "block layer",
+    "bricklayer",
+    "chimney builder",
+    "refractory bricklayer"
+  ],
+  "7113": [
+    "granite cutter",
+    "stone carver",
+    "stone cutter",
+    "stone polish hand or hand powered tools"
+  ],
+  "7114": [
+    "cement finisher",
+    "concrete placer",
+    "terrazzo worker"
+  ],
+  "7115": [
+    "carpenter",
+    "door installer",
+    "finish carpenter",
+    "framer",
+    "joiner",
+    "shipwright wood"
+  ],
+  "7119": [
+    "building wrecker",
+    "prefabricated building assembler",
+    "scaffolder",
+    "skilled demolition worker",
+    "steeplejack"
+  ],
+  "7121": [
+    "asphalt roofer",
+    "metal roofer",
+    "roof fixer",
+    "roof tiler",
+    "slate roofer",
+    "thatcher"
+  ],
+  "7122": [
+    "carpet layer",
+    "marble setter",
+    "parquetry worker",
+    "tile setter"
+  ],
+  "7123": [
+    "dry wall plasterer",
+    "fibrous plasterer",
+    "ornamental plasterer",
+    "plasterer",
+    "solid plasterer",
+    "stucco plasterer"
+  ],
+  "7124": [
+    "acoustic insulation worker",
+    "boiler and pipe insulation worker",
+    "insulation installer",
+    "insulation worker",
+    "refrigeration and air conditioning equipment insulation worker"
+  ],
+  "7125": [
+    "autoglazier",
+    "glazier",
+    "roofing glazier",
+    "vehicle glazier"
+  ],
+  "7126": [
+    "drain technician",
+    "gas fitter",
+    "pipe fitter",
+    "pipe layer",
+    "plumber",
+    "ventilation pipe fitter"
+  ],
+  "7127": [
+    "air conditioning equipment mechanic",
+    "refrigeration mechanic"
+  ],
+  "7131": [
+    "building painter",
+    "paperhanger"
+  ],
+  "7132": [
+    "manufactured articles painter",
+    "varnisher",
+    "vehicle painter"
+  ],
+  "7133": [
+    "building exteriors cleaner",
+    "chimney sweep",
+    "sandblaster building exteriors"
+  ],
+  "7211": [
+    "coremaker",
+    "metal casting moulder"
+  ],
+  "7212": [
+    "brazier",
+    "flame cutter",
+    "welder"
+  ],
+  "7213": [
+    "boilersmith",
+    "coppersmith",
+    "panel beater",
+    "tinsmith"
+  ],
+  "7214": [
+    "erector structural metal",
+    "preparer structural metal",
+    "riveter"
+  ],
+  "7215": [
+    "cable and rope splicer",
+    "rigger",
+    "ship rigger",
+    "theatrical rigger",
+    "tower rigger"
+  ],
+  "7221": [
+    "blacksmith",
+    "drop hammer worker",
+    "forging press worker",
+    "hammersmith"
+  ],
+  "7222": [
+    "die maker",
+    "gunsmith",
+    "jig maker",
+    "locksmith",
+    "patternmaker",
+    "toolmaker"
+  ],
+  "7223": [
+    "boring machine operator",
+    "casting machine operator",
+    "machine tool operator",
+    "machine tool setter",
+    "machine tool setter operator",
+    "metal turner",
+    "rivet production machine operator",
+    "tool production machine operator"
+  ],
+  "7224": [
+    "knife sharpener",
+    "metal finisher",
+    "metal polisher",
+    "tool grinder"
+  ],
+  "7231": [
+    "automotive brakes systems service technician",
+    "diesel fitter road transport",
+    "engine fitter motor vehicle",
+    "garage mechanic",
+    "moped repairer",
+    "motorcycle mechanic",
+    "motorized rickshaw mechanic",
+    "motor vehicle engine and fuel systems service technician",
+    "motor vehicle mechanic",
+    "motor vehicle mechatronics service technician",
+    "motor vehicle repairer",
+    "motor vehicle service technician",
+    "small engine mechanic"
+  ],
+  "7232": [
+    "aeromechanic",
+    "aircraft engine fitter",
+    "aircraft maintenance engineer airframes",
+    "aircraft maintenance engineer engines",
+    "aircraft maintenance supervisor",
+    "aircraft mechanic",
+    "aircraft restorer",
+    "aircraft service technician",
+    "airframe and power plant mechanic",
+    "airframe mechanic",
+    "aviation maintenance technician",
+    "helicopter mechanic",
+    "jet engine mechanic",
+    "pneudraulic systems mechanic aircraft",
+    "powerplant mechanic aircraft",
+    "rocket engine component mechanic"
+  ],
+  "7233": [
+    "construction machinery mechanic",
+    "construction machinery repairer",
+    "farm machinery repairer",
+    "mining machinery fitter",
+    "mining machinery repairer",
+    "stationary engine fitter",
+    "stationary engine repairer",
+    "train engine fitter",
+    "train engine repairer"
+  ],
+  "7234": [
+    "bicycle mechanic",
+    "bicycle repairer",
+    "perambulator repairer",
+    "wheelchair repairer"
+  ],
+  "7311": [
+    "instrument meteorological maker",
+    "photographic equipment repairer",
+    "surgical instrument maker",
+    "watchmaker"
+  ],
+  "7312": [
+    "brass instrument repairer",
+    "piano tuner",
+    "stringed instrument maker",
+    "woodwind instrument maker"
+  ],
+  "7313": [
+    "enameller jewellery",
+    "gem setter",
+    "goldsmith",
+    "jeweller",
+    "silversmith"
+  ],
+  "7314": [
+    "abrasive wheel moulder",
+    "brick and tile moulder",
+    "potter",
+    "pottery and porcelain caster",
+    "pottery and porcelain modeller"
+  ],
+  "7315": [
+    "glass blower",
+    "glass cutter",
+    "glass finisher",
+    "glass grinder"
+  ],
+  "7316": [
+    "decorative painter",
+    "glass enameller",
+    "glass engraver",
+    "glass etcher",
+    "signwriter"
+  ],
+  "7317": [
+    "basket maker",
+    "brush maker",
+    "reed weaving handicraft worker",
+    "wicker furniture maker",
+    "wooden articles handicraft worker"
+  ],
+  "7318": [
+    "carpets handicraft worker",
+    "carpet weaver",
+    "cloth weaver",
+    "knitter",
+    "leather handicraft worker",
+    "loom threader",
+    "textile fibre comber",
+    "textile fibre drawer",
+    "textile fibre rover",
+    "textiles handicraft worker",
+    "thread and yarn spinner"
+  ],
+  "7319": [
+    "candle maker handicraft",
+    "metal toymaker",
+    "stone articles handicraft worker"
+  ],
+  "7321": [
+    "compositor",
+    "desktop publishing operator",
+    "electronic pre press technician",
+    "photogravurist",
+    "photolithographer",
+    "plate maker printing",
+    "plate mounter screen printing",
+    "screen maker",
+    "typesetter"
+  ],
+  "7322": [
+    "block printer",
+    "digital press operator",
+    "feeder operator printing",
+    "flexographic press operator",
+    "gravure press operator",
+    "large sheet fed press operator",
+    "screen printer",
+    "screen printing press operator",
+    "small press operator",
+    "textile printer",
+    "web press operator"
+  ],
+  "7323": [
+    "book binder",
+    "collator operator",
+    "cutter operator",
+    "foil stamp operator",
+    "folder operator",
+    "gatherer operator",
+    "multibinder operator",
+    "perfect binder operator",
+    "saddle stitch operator",
+    "small machine bindery worker"
+  ],
+  "7411": [
+    "building repairs electrician",
+    "electrician"
+  ],
+  "7412": [
+    "armature builder",
+    "automotive electrician",
+    "electrical generator fitter",
+    "electrical mechanic",
+    "lift mechanic"
+  ],
+  "7413": [
+    "electric cable jointer",
+    "electric power line worker"
+  ],
+  "7421": [
+    "aircraft maintenance engineer avionics",
+    "automated teller machines mechanic",
+    "avionics technician",
+    "electronic equipment servicer",
+    "electronics mechanic",
+    "photocopy machine technician"
+  ],
+  "7422": [
+    "communications technology servicer",
+    "computer equipment fitter",
+    "computer hardware installer",
+    "data and telecommunications cabler",
+    "telecommunications equipment repairer",
+    "telecommunications line worker",
+    "telephone installer"
+  ],
+  "7511": [
+    "butcher",
+    "fish filleter",
+    "fishmonger",
+    "slaughterer"
+  ],
+  "7512": [
+    "baker",
+    "chocolate maker",
+    "confectioner",
+    "pastry cook"
+  ],
+  "7513": [
+    "butter maker",
+    "cheese maker"
+  ],
+  "7514": [
+    "chutney maker",
+    "fruit preserver",
+    "jam maker",
+    "oil expeller",
+    "vegetable and fruit pickler",
+    "vegetable preserver"
+  ],
+  "7515": [
+    "food grader",
+    "food taster",
+    "liquor taster",
+    "tea taster",
+    "wine taster"
+  ],
+  "7516": [
+    "cigar maker",
+    "cigarette maker",
+    "tobacco grader"
+  ],
+  "7521": [
+    "dry kiln operator",
+    "lumber kiln operator",
+    "timber treating tank operator",
+    "veneer dryer tender",
+    "wood seasoner",
+    "wood treater"
+  ],
+  "7522": [
+    "cabinet maker",
+    "cartwright",
+    "furniture cabinet maker",
+    "wheelwright",
+    "wood patternmaker"
+  ],
+  "7523": [
+    "carving machine operator wood",
+    "furniture production machine operator",
+    "precision woodworking sawyer",
+    "wood products machine operator",
+    "wood turner",
+    "woodworking lathe operator",
+    "woodworking machine setter",
+    "woodworking machine setter operator",
+    "woodworking machine set up operator"
+  ],
+  "7531": [
+    "dressmaker",
+    "fur grader",
+    "furrier",
+    "hatter",
+    "milliner",
+    "tailor"
+  ],
+  "7532": [
+    "fur patternmaker",
+    "garment cutter",
+    "garment patternmaker",
+    "glove cutter"
+  ],
+  "7533": [
+    "embroiderer",
+    "sewer",
+    "umbrella maker"
+  ],
+  "7534": [
+    "furniture upholsterer",
+    "mattress maker",
+    "orthopaedic upholsterer",
+    "vehicle upholsterer"
+  ],
+  "7535": [
+    "fellmonger",
+    "pelt grader",
+    "tanner"
+  ],
+  "7536": [
+    "cobbler",
+    "orthopaedic shoemaker",
+    "saddler",
+    "shoemaker"
+  ],
+  "7541": [
+    "oyster diver",
+    "salvage frogman",
+    "sponge diver",
+    "underwater worker"
+  ],
+  "7542": [
+    "blaster",
+    "powderman",
+    "powder monkey",
+    "shotfirer"
+  ],
+  "7543": [
+    "product grader",
+    "quality inspector",
+    "wool classer"
+  ],
+  "7544": [
+    "fumigator",
+    "pest controller",
+    "weed controller"
+  ],
+  "7549": [
+    "flower arranger",
+    "optical lens finisher",
+    "optical lens moulder"
+  ],
+  "8111": [
+    "bogger operator",
+    "continuous miner operator",
+    "dragline operator mining",
+    "drilling mining",
+    "jumbo operator",
+    "miner",
+    "mining plant operator",
+    "quarrier",
+    "roof bolter mining"
+  ],
+  "8112": [
+    "coal washer",
+    "crusher operator mineral or stone processing",
+    "flotation worker mineral processing",
+    "gold precipitator",
+    "machine operator stone cutting or processing",
+    "milling machine operator minerals"
+  ],
+  "8113": [
+    "bore sinker",
+    "boring equipment operator",
+    "derrickman",
+    "derrick operator",
+    "developmental driller",
+    "directional driller",
+    "driller oil or gas well",
+    "drilling plant operator",
+    "drilling rig operator",
+    "power tong operator",
+    "toolpusher",
+    "tourpusher"
+  ],
+  "8114": [
+    "cast concrete products machine operator",
+    "cast stone products machine operator",
+    "concrete finishing machines operator",
+    "concrete production machine operator",
+    "industrial diamond polishing machine operator",
+    "stone polishing machine operator"
+  ],
+  "8121": [
+    "ladle pourer",
+    "metal extrusion plant operator",
+    "metal heat treating operator",
+    "steel roller"
+  ],
+  "8122": [
+    "metal coating machine operator",
+    "metal finishing machine operator",
+    "metal plating machine operator",
+    "metal polishing machine operator"
+  ],
+  "8131": [
+    "candle production machine operator",
+    "explosive products machine operator",
+    "pharmaceutical and toiletry products machine operators"
+  ],
+  "8132": [
+    "examples of occupations classified here",
+    "colour developer film",
+    "darkroom technician",
+    "developing machine operator photography",
+    "enlarging machine operator",
+    "photograph enlarger",
+    "photographic film machine operator",
+    "photographic film printer",
+    "photographic processor",
+    "photograph printer"
+  ],
+  "8141": [
+    "latex worker",
+    "rubber extruding machine operator",
+    "rubber milling machine operator",
+    "rubber moulder",
+    "rubber products machine operator",
+    "tyre maker",
+    "tyre repairer",
+    "vulcanizer"
+  ],
+  "8142": [
+    "laminated press operator plastics",
+    "optic fibre drawer",
+    "plastics boat builder",
+    "plastics bottle blowing machine operator",
+    "plastic cable making machine operator",
+    "plastic extrusion machine operator",
+    "plastic moulder",
+    "plastics products machine operator"
+  ],
+  "8143": [
+    "machine operator cardboard products",
+    "machine operator envelope and paper bag production",
+    "machine operator paper box production",
+    "paper products machine operator",
+    "papier mache moulder"
+  ],
+  "8151": [
+    "fibre combing machine operator",
+    "fibre preparing machine operator",
+    "thread and yarn spinning machine operator",
+    "thread and yarn twisting machine operator",
+    "thread and yarn winding machine operator"
+  ],
+  "8152": [
+    "carpet weaving machine operator",
+    "knitting machine operator",
+    "net production machine operator",
+    "weaving machine operator"
+  ],
+  "8153": [
+    "embroidery machine operator",
+    "sewing machine operator"
+  ],
+  "8154": [
+    "fabric bleaching machine operator",
+    "textile dyeing machine operator"
+  ],
+  "8155": [
+    "hide dehairing machine operator",
+    "leather staining machine operator",
+    "tanning machine operator"
+  ],
+  "8156": [
+    "machine operator footwear production"
+  ],
+  "8157": [
+    "dry cleaning machine operator",
+    "laundry machine operator",
+    "pressing machine operator laundry"
+  ],
+  "8159": [
+    "braid making machine operator",
+    "hat making machine operator",
+    "tent making machine operator",
+    "textile patternmaking machine operator"
+  ],
+  "8160": [
+    "bakery products machine operator",
+    "bread production machine operator",
+    "chocolate production machine operator",
+    "cigarette production machine operator",
+    "cigar production machine operator",
+    "dairy products machine operator",
+    "fish processing machine operator",
+    "meat processing machine operator",
+    "milk processing machine operator"
+  ],
+  "8171": [
+    "calender operator pulp and paper",
+    "pulp and paper grinder operator",
+    "repulper operator",
+    "sheeter operator pulp and paper"
+  ],
+  "8172": [
+    "circular saw operator",
+    "log cut off operator",
+    "plywood press operator",
+    "sawmill operator",
+    "sawmill planer operator",
+    "sawmill trimmer operator",
+    "veneer lathe operator",
+    "wood processing plant sawyer"
+  ],
+  "8181": [
+    "brick kiln operator",
+    "ceramics painting machine operator",
+    "clay mixing machine operator",
+    "extruding clay press operator",
+    "furnace operator glass production",
+    "glass blowing machine operator",
+    "glass mixing machine operator",
+    "glass production furnace operator",
+    "pottery kiln operator",
+    "tile kiln operator"
+  ],
+  "8182": [
+    "boiler tender",
+    "ship s boiler operator",
+    "stationary engineer",
+    "steam engine operator",
+    "stoker"
+  ],
+  "8183": [
+    "bottle filler",
+    "canning machine operator",
+    "labelling machine operator",
+    "packing machine operator",
+    "wrapping machine operator"
+  ],
+  "8189": [
+    "cable and rope splicing machine operator",
+    "silicon chip production machine operator"
+  ],
+  "8211": [
+    "aircraft assembler",
+    "bench fitter trucks",
+    "engine assembler",
+    "engine installer",
+    "gearbox assembler",
+    "turbine assembler",
+    "vehicle assembler"
+  ],
+  "8212": [
+    "armature assembler",
+    "electrical equipment assembler",
+    "electromechanical equipment assembler",
+    "electronic equipment assembler",
+    "etcher printed circuit board",
+    "telephone assembler",
+    "television assembler",
+    "watch assembler"
+  ],
+  "8219": [
+    "ammunition assembler",
+    "bicycle assembler",
+    "box builder",
+    "door assembler",
+    "eyeglass frame assembler",
+    "furniture finisher wood",
+    "jewellery assembler",
+    "knife assembler",
+    "leather products assembler",
+    "luggage finisher",
+    "metal products assembler except mechanical",
+    "paperboard products assembler",
+    "pen and pencil assembler",
+    "plastic products assembler",
+    "plastic toy assembler",
+    "rubber products assembler",
+    "sun blinds assembler",
+    "textile products assembler",
+    "thermos bottle assembler",
+    "wood products assembler"
+  ],
+  "8311": [
+    "locomotive driver",
+    "metropolitan railway driver",
+    "train driver"
+  ],
+  "8312": [
+    "braker railway",
+    "shunter railway",
+    "signaller railway"
+  ],
+  "8321": [
+    "dispatch rider",
+    "driver motorized rickshaw",
+    "driver motorized tricycle",
+    "motorcyclist"
+  ],
+  "8322": [
+    "ambulance driver",
+    "car driver",
+    "parking valet",
+    "taxi driver",
+    "van driver"
+  ],
+  "8331": [
+    "bus driver",
+    "motor coach driver",
+    "tram driver"
+  ],
+  "8332": [
+    "concrete mixer driver",
+    "garbage truck driver",
+    "heavy truck driver",
+    "road train driver"
+  ],
+  "8341": [
+    "harvester operator",
+    "logging plant operator",
+    "timber carrier driver",
+    "tractor driver",
+    "tree faller operator"
+  ],
+  "8342": [
+    "bulldozer operator",
+    "excavator operator",
+    "front end loader operator",
+    "pile driver operator",
+    "road roller operator",
+    "road surface laying machine operator",
+    "snow groomer operator"
+  ],
+  "8343": [
+    "cable car operator",
+    "chair lift operator",
+    "crane operator",
+    "funicular driver",
+    "hoist operator",
+    "mine cage operator",
+    "ski lift operator"
+  ],
+  "8344": [
+    "forklift truck driver"
+  ],
+  "8350": [
+    "boatswain",
+    "ferry hand",
+    "sailor",
+    "tug hand"
+  ],
+  "9111": [
+    "charworker domestic",
+    "domestic cleaner",
+    "domestic helper"
+  ],
+  "9112": [
+    "aircraft cleaner",
+    "hotel cleaner",
+    "lavatory attendant",
+    "office cleaner"
+  ],
+  "9121": [
+    "dry cleaner hand",
+    "hand launderer",
+    "hand presser",
+    "ironer"
+  ],
+  "9122": [
+    "car detailer",
+    "vehicle washer hand"
+  ],
+  "9123": [
+    "window cleaner"
+  ],
+  "9129": [
+    "carpet cleaner",
+    "cooling tower cleaner",
+    "graffiti cleaner",
+    "swimming pool cleaner",
+    "water blaster"
+  ],
+  "9211": [
+    "cane planter",
+    "fruit picker",
+    "rice farm labourer",
+    "vegetable picker"
+  ],
+  "9212": [
+    "livestock farm labourer"
+  ],
+  "9213": [
+    "farm labourer"
+  ],
+  "9214": [
+    "garden labourer",
+    "horticultural labourer",
+    "lawn mower",
+    "nursery labourer"
+  ],
+  "9215": [
+    "axeman woman",
+    "forestry labourer",
+    "tree planter"
+  ],
+  "9216": [
+    "aquaculture labourer",
+    "fishery labourer"
+  ],
+  "9311": [
+    "mining labourer",
+    "quarry labourer"
+  ],
+  "9312": [
+    "construction labourer civil engineering",
+    "earthmoving labourer",
+    "maintenance labourer dams"
+  ],
+  "9313": [
+    "bricklayer s assistant",
+    "construction labourer building work",
+    "demolition labourer",
+    "hod carrier"
+  ],
+  "9321": [
+    "labeller hand",
+    "packer hand",
+    "wrapper hand"
+  ],
+  "9329": [
+    "bottle sorter",
+    "factory hand",
+    "material handler",
+    "stacker"
+  ],
+  "9331": [
+    "bicycle courier",
+    "cycle rickshaw driver",
+    "pedal vehicle driver",
+    "rickshaw puller"
+  ],
+  "9332": [
+    "animal drawn vehicle driver",
+    "animal train driver",
+    "mahout"
+  ],
+  "9333": [
+    "baggage handler",
+    "freight handler",
+    "warehouse porter"
+  ],
+  "9334": [
+    "night filler",
+    "stock filler",
+    "stock handler"
+  ],
+  "9411": [
+    "fast food cook",
+    "hamburger maker",
+    "pizza maker",
+    "short order cook"
+  ],
+  "9412": [
+    "hand dishwasher",
+    "kitchen assistant",
+    "kitchen hand",
+    "kitchen porter",
+    "kitchen steward",
+    "pantry attendant"
+  ],
+  "9510": [
+    "car guard",
+    "car window washer",
+    "errand boy",
+    "free newspaper distributor",
+    "leaflet distributor",
+    "shoe polisher"
+  ],
+  "9520": [
+    "hawker",
+    "newspaper vendor",
+    "pedlar"
+  ],
+  "9611": [
+    "dustman woman",
+    "recycling collector",
+    "refuse collector"
+  ],
+  "9612": [
+    "recycling worker",
+    "scrap merchant",
+    "waste picker"
+  ],
+  "9613": [
+    "park sweeper",
+    "street sweeper"
+  ],
+  "9621": [
+    "hotel porter",
+    "leaflet deliverer",
+    "luggage porter",
+    "messenger",
+    "newspaper deliverer"
+  ],
+  "9622": [
+    "handyperson",
+    "hotel useful",
+    "odd job person"
+  ],
+  "9623": [
+    "meter reader",
+    "vending machine collector"
+  ],
+  "9624": [
+    "firewood collector",
+    "water collector"
+  ],
+  "9629": [
+    "cloak room attendant",
+    "fairground attendant",
+    "parking attendant",
+    "ticket collector",
+    "usher"
+  ]
+}
