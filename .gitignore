@@ -13,6 +13,9 @@ Outputs/
 # Data folder
 Data/
 
+# exception for ISCO source data file (publicly available)
+!Data/ISCO-08 EN Structure and definitions.xlsx
+
 # exception for the Outputs folder (so that it’s available)
 !Outputs/.gitkeep
 
