@@ -32,6 +32,17 @@ class Coder:
         scheme=config["user"]["scheme"],
         output=config["user"]["output"],
     ):
+        """
+        Main class initialiser
+
+        Keyword arguments:
+        lookup_dir:str
+            string containing directory where scheme classification found
+        scheme:str
+            string containing scheme
+        output:str
+            string containing directory where all outputs to be placed
+        """
         self.scheme = scheme.lower()
         self.output = output
         self.cl = cleaner.Cleaner(scheme=self.scheme)
@@ -75,7 +86,15 @@ class Coder:
         return result
 
     def get_tfidf_match(self, text, top_n=5):
-        """Finds the closest top_n matching coding scheme descriptions to some text"""
+        """
+        Finds the closest top_n matching coding scheme descriptions to some text
+
+        Keyword arguments:
+            text -- str. input text to match.
+            top_n -- num. top N to return. Default 5.
+        Returns:
+            list of best matching scheme codes, of length top_n
+        """
 
         # Calculate similarities
         vector = self._tfidf.transform([text])
@@ -86,7 +105,7 @@ class Coder:
         scheme_codes = getattr(self.mg_buckets, f"{self.scheme.upper()}_code")
         return [scheme_codes[code] for code in best]
 
-    def get_best_fuzzy_match(self, text: str, candidate_codes, detailed_return=False):
+    def get_best_fuzzy_match(self, text: str, candidate_codes):
         """
         Uses partial token set ratio in fuzzywuzzy to check against all
         individual job titles.
@@ -94,6 +113,10 @@ class Coder:
         Keyword arguments:
             text -- string, job title, to compare to job titles for codes
             candidate_codes -- list of potential codes worth checking
+        Returns:
+            Either a list of lists (when self.output = "multi", best
+            matching codes and corresponding scores), OR a string (best
+            matching code, when self.output = "single").
         """
         options = []
 
@@ -137,6 +160,9 @@ class Coder:
             title -- freetext job title to find a code for
             sector -- any additional description of industry/sector
             description -- freetext description of work/role/duties
+        Returns:
+            list of lists, containing best matches
+
         """
         clean_title = self.cl.simple_clean(title)
 
@@ -174,6 +200,16 @@ class Coder:
         )
 
     def shape_output(self, record_df):
+        """
+        Add empty columns and rename to contain predicted code for job description and their scores
+
+        Keyword arguments:
+            record_df: dataframe where the new columns will be added
+
+        Returns:
+            coded_df: dataframe with added columns
+        """
+
         f = lambda x: "prediction {}".format(x + 1)
         coded_df_codes = (
             record_df["Predicted_codes"].apply(pd.Series).fillna("").rename(columns=f)
@@ -206,6 +242,8 @@ class Coder:
                              (default None)
             description_column -- Freetext description of work/role/duties
                                   (default None)
+        Returns:
+            record_df: dataframe
         """
         # Record the column names for later
         self.df_columns.update(
@@ -286,7 +324,15 @@ class Coder:
 
 
 def parse_cli_input():
-    # TODO - add docstring
+    """
+    Parses CLI arguments, setting defaults from config.yml if not explicitly supplied.
+
+    Keyword arguments:
+        None
+
+    Returns:
+        args: dict of arguments
+    """
     arg_parser = ArgumentParser()
     arg_parser.add_argument(
         "--in_file", help="Input file to code", default=config["user"]["input_file"]

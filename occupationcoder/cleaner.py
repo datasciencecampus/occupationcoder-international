@@ -34,6 +34,12 @@ KEEP_AS_IS = [
 
 
 def load_config():
+    """parse configuration file
+
+    Returns
+    -------
+    dict
+        dictionary with each section of the yaml file as the key"""
     with open("config.yml", "r") as f:
         config = yaml.safe_load(f)
     return config
@@ -51,6 +57,14 @@ lookup_dir = Path(config["dirs"]["lookup_dir"])
 
 class Cleaner:
     def __init__(self, scheme=config["user"]["scheme"]):
+        """
+        set scheme and load known_words json
+        Parameters
+        ----------
+        scheme:str
+            string containing scheme
+        """
+
         self.scheme = scheme
         self.advanced = True
 
@@ -81,6 +95,8 @@ class Cleaner:
             text -- String representing human freetext to clean up
             known_only -- Bool, whether to filter to only known job title words
                           (default True)
+            advanced -- Bool. Controls whether to apply lemmatisation and known
+                          words removal.
         """
 
         if not advanced:
