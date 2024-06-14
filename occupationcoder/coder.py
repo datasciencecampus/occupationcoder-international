@@ -73,10 +73,7 @@ class Coder:
         self.df_columns = {"title": None, "sector": None, "description": None}
 
     def get_exact_match(self, title: str):
-        """ If it exists, finds exact match to a job title's first three words
-
-        Returns: Associated dictionary code for the exact match
-        """
+        """If exists, finds exact match to a job title's first three words"""
         title = " ".join(title.split()[:3])
         result = None
         keys = self.titles_mg.keys()
@@ -195,9 +192,6 @@ class Coder:
     def _code_row(self, row):
         """
         Helper for applying code_record over the rows of a pandas DataFrame
-
-        Returns: A coded row in a dataframe, to be used as part of `code_data_frame()`
-
         """
         return self.code_record(
             row[self.df_columns["title"]],
@@ -249,7 +243,7 @@ class Coder:
             description_column -- Freetext description of work/role/duties
                                   (default None)
         Returns:
-            record_df: Final coded dataframe
+            record_df: dataframe
         """
         # Record the column names for later
         self.df_columns.update(

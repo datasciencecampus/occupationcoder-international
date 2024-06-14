@@ -15,21 +15,21 @@ wnl = nltk.WordNetLemmatizer()
 
 # List of terms we want to NOT lemmatize for some reason
 KEEP_AS_IS = [
-    "accounts",
-    "claims",
-    "communications",
-    "complaints",
-    "events",
+    "sales",
+    "years",
     "goods",
+    "operations",
+    "systems",
+    "communications",
+    "events",
+    "loans",
     "grounds",
     "lettings",
-    "loans",
-    "operations",
+    "claims",
+    "accounts",
     "relations",
-    "sales",
+    "complaints",
     "services",
-    "systems",
-    "years",
 ]
 
 
@@ -79,10 +79,7 @@ class Cleaner:
             self.advanced = False
 
     def lemmatize(self, string):
-        """Helper, handles generating lemmas. Uses NLTK's WordNetLemmatizer
-
-        Returns: List of lemmatised tokens for an inputted string
-        """
+        """Helper, handles generating lemmas"""
         return [
             wnl.lemmatize(token) if token not in KEEP_AS_IS else token
             for token in string.split()
