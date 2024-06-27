@@ -1,4 +1,4 @@
-# occupationcoder-ext
+# occupationcoder-international
 [![stability-beta](https://img.shields.io/badge/stability-beta-33bbff.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#beta)
 
 ## A tool to assign standard occupational classification codes to job descriptions
