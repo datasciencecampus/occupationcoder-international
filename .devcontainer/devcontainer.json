@@ -1,7 +1,7 @@
 {
     "name": "occupationcoder-international-devcontainer",
     "image": "mcr.microsoft.com/devcontainers/python:3.12",
-    "postCreateCommand": "chmod +x .devcontainer/system-setup.sh && .devcontainer/system_setup.sh",
+    "postCreateCommand": "echo Hello from PostCreate && ls -la && bash .devcontainer/system_setup.sh",
     "customizations": {
         "vscode": {
             "settings": {

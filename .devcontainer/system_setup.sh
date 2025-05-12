@@ -1,5 +1,14 @@
 #!/bin/bash
+set -e # Exit on error
+
+echo "Creating virtual environment..."
 python -m venv .coder-env
-source .coder-env/bin/activate
-pip install -r requirements.txt
-python setup.py install
+
+echo "Installing dependencies..."
+./.coder-env/bin/pip install -r requirements.txt
+
+echo "Running setup.py..."
+./.coder-env/bin/python setup.py install
+
+echo "Activating virtual environment..."
+./.coder-env/bin/activate
