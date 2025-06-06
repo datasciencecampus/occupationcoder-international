@@ -1,0 +1,15 @@
+{
+    "name": "occupationcoder-international-devcontainer",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+    "postCreateCommand": "echo Hello from PostCreate && ls -la && bash .devcontainer/system_setup.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": ".coder-env/bin/python"
+            },
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    }
+}
