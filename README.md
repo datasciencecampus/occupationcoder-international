@@ -26,9 +26,12 @@ Please see CONTRUTING.md for furthe details on expected maintenance, bugs etc.
 
 In contrast to the original package, as presented here, we assume the user will code  inputs provided as a .csv file as opposed to coding single job descriptions (if a single record is to be coded, it is fine to just code an input file with a single record). Information on how to format inputs, run the tool, and a summary of expected outputs is provided below.
 
+The code in this repository can be used/run either by setting up locally (or in custom cloud infrastructure) by following the steps under "Getting Started" below, or by running in a Github Codespace. We have provided a fully pre-configured set up for this within this repository (in `.devcontainer/`), with all required packages installed, which will allow a user to run the code within a Codespace without any configuration required.  
+To start a Codespace, go to to the "Code" button at the top of the Github repository page, select the "Codespaces" tab, and click "Start new codespace" for the relevant branch. Once this is running, for basic use you can follow the steps below from "Input format" onwards.
+
 ### Getting started
 
-After cloning the repository locally, we suggest setting up a new virtual environment to house necessary packages (e.g. `python -m venv .coder-env` and activate this as appropriate for your OS).
+After cloning the repository locally, we suggest setting up a new virtual environment to house necessary packages (e.g. `python -m venv .coder-env` and activate this as appropriate for your OS, e.g. `source .coder-env/bin/activate`).
 
 To install dependencies and set up the package locally, run the following in a command line interface, in the base directory of this repository (i.e. where this README.md is located):
 ```
