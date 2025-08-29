@@ -133,10 +133,10 @@ def column_cleaner(df_col):
     return df_col
 
 
-def list_exact_titles(titles):
+def list_exact_titles(titles, min_text_length = 4):
     """
     Helper function to apply simple_clean() on a list consisting of text string elements.
-    Addtionally removes any very short text list elements (5 or less).
+    Addtionally removes any very short text list elements (shorter than min_text_length).
     simple_clean(..., advanced = False) removes HTML tags, removes excess whitespace, keeps only letters and spaces.
 
     Args:
@@ -150,7 +150,7 @@ def list_exact_titles(titles):
 
     """
     result = [cl.simple_clean(s, advanced=False) for s in titles]
-    result = [s for s in result if len(s) >= 5]
+    result = [s for s in result if len(s) >= min_text_length]
     return result
 
 
@@ -319,6 +319,7 @@ if __name__ == "__main__":
         ],
         "Included occupations": [
             "Examples of the occupations classified here:",
+            "Example of the occupations classified here:",
             "Occupations in this major group are classified into the following",
             "Occupations in this sub-major group are classified into the following",
             "Occupations in this minor group are classified into the following",
