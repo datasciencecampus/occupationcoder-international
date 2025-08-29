@@ -132,7 +132,7 @@ class Coder:
             )
 
             # Handle non-match by looking at match score
-            if best_fuzzy_match[1] == 0:
+            if best_fuzzy_match is None:
                 options.append((None, 0, None))
             else:
                 # Record best match, the score, and the associated scheme code
