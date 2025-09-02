@@ -60,8 +60,8 @@ class Coder:
             ]
 
         self.mg_buckets = pd.read_json(
-            lookup_dir / f"{self.scheme}/buckets_{self.scheme}.json"
-        ).astype(str)
+            lookup_dir / f"{self.scheme}/buckets_{self.scheme}.json", dtype=str
+        )
 
         # Build the TF-IDF model
         self._tfidf = TfidfVectorizer(stop_words="english", ngram_range=(1, 3))
