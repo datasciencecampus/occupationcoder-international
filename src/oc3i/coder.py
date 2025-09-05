@@ -8,7 +8,7 @@ import pandas as pd
 from pathlib import Path
 
 # NLP related packages to support fuzzy-matching
-from occupationcoder import cleaner
+from oc3i import cleaner
 from rapidfuzz import process, fuzz
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -17,13 +17,14 @@ from argparse import ArgumentParser
 # For preventing windows multiprocessing error
 from multiprocessing import freeze_support
 
+PACKAGE_ROOT = Path(__file__).resolve().parent
+
 config = cleaner.load_config()
 
-script_dir = Path(config["dirs"]["script_dir"])
-parent_dir = Path(config["dirs"]["parent_dir"])
-lookup_dir = Path(config["dirs"]["lookup_dir"])
-output_dir = Path(config["dirs"]["output_dir"])
-
+script_dir = (PACKAGE_ROOT / config["dirs"]["script_dir"]).resolve()
+parent_dir = (PACKAGE_ROOT / config["dirs"]["parent_dir"]).resolve()
+lookup_dir = (PACKAGE_ROOT / config["dirs"]["lookup_dir"]).resolve()
+output_dir = (PACKAGE_ROOT / config["dirs"]["output_dir"]).resolve()
 
 class Coder:
     def __init__(
@@ -379,15 +380,9 @@ def parse_cli_input():
     print("Output file: " + args.out_file + "\n")
     return args
 
-
-# Define main function. Main operations are placed here to make it possible
-# use multiprocessing in Windows.
-if __name__ == "__main__":
+def main():
     freeze_support()
-
     args = parse_cli_input()
-
-    # Read command line inputs
     df = pd.read_csv(args.in_file)
     commCoder = Coder(scheme=args.scheme, output=args.output)
     proc_tic = time.perf_counter()
@@ -398,8 +393,12 @@ if __name__ == "__main__":
         description_column=args.description_col,
     )
     proc_toc = time.perf_counter()
+    output_dir.mkdir(parents=True, exist_ok=True)
     print("Actual coding ran in: {}".format(proc_toc - proc_tic))
     print("occupationcoder message:\n" + "Coding complete. Showing first results...")
     print(df.head())
-    # Write to csv
     df.to_csv(output_dir / args.out_file, index=False, encoding="utf-8")
+    print("Coding complete, output written to:", output_dir / args.out_file)
+
+if __name__ == "__main__":
+    main()

@@ -40,7 +40,8 @@ def load_config():
     -------
     dict
         dictionary with each section of the yaml file as the key"""
-    with open("config.yml", "r") as f:
+    config_file = Path(__file__).parent / "config.yml"
+    with open(config_file, "r") as f:
         config = yaml.safe_load(f)
     return config
 

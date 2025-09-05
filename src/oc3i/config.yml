@@ -1,8 +1,8 @@
 dirs:
-  script_dir: occupationcoder/
-  parent_dir: .
-  lookup_dir: occupationcoder/dictionaries/
-  output_dir: occupationcoder/outputs/
+  script_dir: .
+  parent_dir: ..
+  lookup_dir: dictionaries/
+  output_dir: outputs/
 
 user:
   scheme: soc
