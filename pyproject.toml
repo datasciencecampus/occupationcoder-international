@@ -4,7 +4,6 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "occupationcoder-international"
-version = "0.1.0"
 description = "A fork of the 'occupationcoder' package: a tool to assign standard occupational classification codes (e.g ISCO) to job descriptions."
 readme = "README.md"
 authors = [{ name="ONS Data Science Campus", email="datacampus@ons.gov.uk" }]
@@ -40,3 +39,6 @@ oc3i = [
     "dictionaries/*.json",
     "dictionaries/**/*.json"
 ]
+
+[tool.setuptools.dynamic]
+version = { attr = "oc3i.__version__" }
