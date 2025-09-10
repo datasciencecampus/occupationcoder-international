@@ -8,6 +8,14 @@ import yaml
 from nltk.corpus import stopwords
 from pathlib import Path
 
+# Ensure required NLTK corpora are downloaded
+resources = ["stopwords", "wordnet"]
+for res in resources:
+    try:
+        nltk.data.find(f"corpora/{res}")
+    except LookupError:
+        nltk.download(res, quiet=True)
+
 STOPWORDS = stopwords.words("english")
 
 # If we put this here we only have to instantiate it once...
@@ -31,15 +39,6 @@ KEEP_AS_IS = [
     "systems",
     "years",
 ]
-
-def check_download_corpora():
-    """Ensure required NLTK corpora are downloaded"""
-    resources = ["stopwords", "wordnet"]
-    for res in resources:
-        try:
-            nltk.data.find(f"corpora/{res}")
-        except LookupError:
-            nltk.download(res, quiet=True)
 
 def load_config():
     """parse configuration file
