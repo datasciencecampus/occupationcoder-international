@@ -32,6 +32,14 @@ KEEP_AS_IS = [
     "years",
 ]
 
+def check_download_corpora():
+    """Ensure required NLTK corpora are downloaded"""
+    resources = ["stopwords", "wordnet"]
+    for res in resources:
+        try:
+            nltk.data.find(f"corpora/{res}")
+        except LookupError:
+            nltk.download(res, quiet=True)
 
 def load_config():
     """parse configuration file

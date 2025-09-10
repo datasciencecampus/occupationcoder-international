@@ -44,6 +44,9 @@ class Coder:
         output:str
             string containing directory where all outputs to be placed
         """
+        # Ensure required NLTK corpora are downloaded
+        cleaner.check_download_corpora()
+        
         self.scheme = scheme.lower()
         self.output = output
         self.cl = cleaner.Cleaner(scheme=self.scheme)
