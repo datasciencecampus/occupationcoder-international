@@ -21,6 +21,7 @@ dependencies = [
     "Unidecode==1.4.0",
     "pyaml==25.1.0"
 ]
+dynamic = ["version"]
 
 [project.optional-dependencies]
 dev = [
