@@ -38,7 +38,8 @@ oc3i = "oc3i.coder:main"
 oc3i = [
     "config.yml",
     "dictionaries/*.json",
-    "dictionaries/**/*.json"
+    "dictionaries/**/*.json",
+    "data/test_vacancies.csv"
 ]
 
 [tool.setuptools.dynamic]

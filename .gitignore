@@ -8,10 +8,10 @@ load_speed_test.py
 load_speed_test_results.csv
 
 # Outputs folder
-Outputs/
+src/oc3i/outputs/
 
 # Data folder
-Data/
+src/oc3i/data/
 
 # exception for ISCO source data file (publicly available)
 !Data/ISCO-08 EN Structure and definitions.xlsx

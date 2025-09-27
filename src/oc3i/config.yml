@@ -7,7 +7,7 @@ dirs:
 user:
   scheme: soc
   output: multi
-  input_file: tests/test_vacancies.csv
+  # input_file: /path/to/your/data.csv   # leave blank to use bundled example
   output_file: processed_jobs.csv
   title_column: job_title
   sector_column: job_sector

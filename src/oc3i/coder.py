@@ -6,6 +6,7 @@ import time
 import pandas as pd
 
 from pathlib import Path
+from importlib.resources import files
 
 # NLP related packages to support fuzzy-matching
 from oc3i import cleaner
@@ -328,6 +329,9 @@ class Coder:
         client.close()
         return result
 
+def get_example_file():
+    """Path to the bundled example dataset."""
+    return files("oc3i.data") / "test_vacancies.csv"
 
 def parse_cli_input():
     """
@@ -341,7 +345,7 @@ def parse_cli_input():
     """
     arg_parser = ArgumentParser()
     arg_parser.add_argument(
-        "--in_file", help="Input file to code", default=config["user"]["input_file"]
+        "--in_file", help="Input file to code"
     )
     arg_parser.add_argument(
         "--title_col",
@@ -370,20 +374,29 @@ def parse_cli_input():
         default=config["user"]["output"],
     )
     args = arg_parser.parse_args()
+    return args
+
+def main():
+    freeze_support()
+    args = parse_cli_input()
+
+    in_file = (
+        args.in_file
+        or config["user"].get("input_file")
+        or get_example_file()
+    )
+
+    df = pd.read_csv(in_file)
+
     print("\nRunning coder with the following settings:\n")
-    print("Input file: " + args.in_file)
+    print("Input file: " + str(in_file))
     print("Coding to scheme: " + args.scheme)
     print("Output type: " + args.output)
     print("Data column job titles: " + args.title_col)
     print("Data column job sector: " + args.sector_col)
     print("Data column job description: " + args.description_col)
     print("Output file: " + args.out_file + "\n")
-    return args
 
-def main():
-    freeze_support()
-    args = parse_cli_input()
-    df = pd.read_csv(args.in_file)
     commCoder = Coder(scheme=args.scheme, output=args.output)
     proc_tic = time.perf_counter()
     df = commCoder.code_data_frame(
