@@ -5,7 +5,7 @@ echo "Creating virtual environment..."
 python -m venv env
 
 echo "Activating virtual environment..."
-source ./env/bin/activate
+source env/bin/activate
 
 echo "Update pip .. "
 pip install --upgrade pip
