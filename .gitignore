@@ -4,6 +4,8 @@
 
 # Outputs folder
 src/oc3i/outputs/
+# Default output file
+output.csv
 
 # Data folder
 src/oc3i/data/

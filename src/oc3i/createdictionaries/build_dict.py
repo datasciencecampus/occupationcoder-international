@@ -5,7 +5,7 @@ import pandas as pd
 from pathlib import Path
 from unidecode import unidecode
 
-from occupationcoder import cleaner
+from oc3i import cleaner
 
 config = cleaner.load_config()
 script_dir = Path(config["dirs"]["script_dir"])
