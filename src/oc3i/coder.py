@@ -366,7 +366,7 @@ def parse_cli_input():
         "--scheme", help="Scheme to code to", default=config["user"]["scheme"]
     )
     arg_parser.add_argument(
-        "--out_file", help="Output file name", default=config["user"]["output_file"]
+        "--out_file", help="Output file name"
     )
     arg_parser.add_argument(
         "--output",
@@ -386,6 +386,12 @@ def main():
         or get_example_file()
     )
 
+    out_file = (
+        args.out_file
+        or config["user"].get("output_file")
+        or Path.cwd() / "output.csv"
+    )
+
     df = pd.read_csv(in_file)
 
     print("\nRunning coder with the following settings:\n")
@@ -395,7 +401,7 @@ def main():
     print("Data column job titles: " + args.title_col)
     print("Data column job sector: " + args.sector_col)
     print("Data column job description: " + args.description_col)
-    print("Output file: " + args.out_file + "\n")
+    print("Output file: " + str(out_file) + "\n")
 
     commCoder = Coder(scheme=args.scheme, output=args.output)
     proc_tic = time.perf_counter()
@@ -410,8 +416,8 @@ def main():
     print("Actual coding ran in: {}".format(proc_toc - proc_tic))
     print("occupationcoder message:\n" + "Coding complete. Showing first results...")
     print(df.head())
-    df.to_csv(output_dir / args.out_file, index=False, encoding="utf-8")
-    print("Coding complete, output written to:", output_dir / args.out_file)
+    df.to_csv(out_file, index=False, encoding="utf-8")
+    print("Coding complete, output written to:", out_file)
 
 if __name__ == "__main__":
     main()
