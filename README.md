@@ -70,7 +70,7 @@ coder.code_data_frame(dat,
                       sector_column = "job_sector")
 ```
 Note that where the example data is saved locally will depend on your setup; the above uses the function `get_example_file()` to find where it is stored on your system.  
-The arguments given for the `code_data_frame()` method (`title_column` etc) are described in the function docstring and should match column names in the input file specificed - see also "Input format" below.
+The arguments given for the `code_data_frame()` method (`title_column` etc) are described in the function docstring and should match column names in the input file specificed - see "Settings: coding scheme and input format" below.
 
 ### Settings: coding scheme and input format
 The `scheme` argument for the `Coder` class looks for a directory with the same name under [occupationcoder/dictionaries](occupationcoder/dictionaries/). Out of the box, we provide the dictionaries for the SOC scheme as used by the original package, and we have added corresponding ISCO dictionaries.  
