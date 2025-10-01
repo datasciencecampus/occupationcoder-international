@@ -151,9 +151,7 @@ class TestOccupationcoder(unittest.TestCase):
                 "--output=single",
             ]
         )
-        df = pd.read_csv(
-            os.path.join("src","oc3i","outputs","processed_jobs.csv")
-        )
+        df = pd.read_csv("output.csv")
         self.assertEqual(df["SOC_code"].to_list(), [211, 242, 912])
 
     def manual_load_test(self):
