@@ -59,7 +59,7 @@ An example code snippet that imports package modules and uses this to code examp
 ```
 import pandas as pd
 from oc3i import Coder
-from oc3i import get_example_file
+from oc3i.coder import get_example_file
 
 coder = Coder(scheme = "isco")
 
