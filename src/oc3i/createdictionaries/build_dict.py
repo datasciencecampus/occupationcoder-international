@@ -4,11 +4,15 @@ import re
 import pandas as pd
 from pathlib import Path
 from unidecode import unidecode
+from datetime import datetime
+
 
 from oc3i import cleaner
 
 config = cleaner.load_config()
-script_dir = Path(config["dirs"]["script_dir"])
+CURRENT_DIR = Path(__file__).resolve()
+PACKAGE_ROOT = CURRENT_DIR.parents[1]
+lookup_dir = (PACKAGE_ROOT / config["dirs"]["lookup_dir"]).resolve()
 
 cl = cleaner.Cleaner(scheme="")
 
@@ -178,9 +182,17 @@ def save_json(jsondata, filename=None):
         )
         return
 
-    filepath = Path(config["dirs"]["lookup_dir"]) / filename
+    filepath = lookup_dir / Path(filename)
+    # If output file directory does not exist, create it:
     if not filepath.parent.exists():
         filepath.parent.mkdir()
+    # If output file already exists, backup existing file with timestamp:
+    if filepath.exists():
+        backup_filepath = filepath.parent / Path("backup")
+        backup_filepath.mkdir(exist_ok=True)        
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        backup_file = backup_filepath / Path(timestamp + "_" + filepath.name)
+        backup_file.write_bytes(filepath.read_bytes())
 
     with open(filepath, "w") as json_file:
         json.dump(jsondata, json_file, indent=4)
@@ -242,8 +254,11 @@ def process_file(
 
     # Fuzzy match (bucket) JSON processing:
     buckets_df = input_df.copy()
-
+    # Keep original titles for future storage:
+    orig_titles = buckets_df["Title EN"]
+    
     for col in bucket_cols:
+
         buckets_df[col] = column_cleaner(buckets_df[col])
         buckets_df[col] = remove_substr(buckets_df[col], exclude_text=exclude_text)
         if exclude_pattern is not None:
@@ -261,6 +276,9 @@ def process_file(
             lambda x: cl.simple_clean(x, known_only=False)
         )
 
+    # Reattach original titles:
+    buckets_df["Title"] = orig_titles
+
     if level == 4:
         buckets_df = buckets_df[buckets_df[code_col].str.len() == level]
         buckets_df = buckets_df.reset_index(drop=True)
@@ -269,13 +287,14 @@ def process_file(
             buckets_df, level, code_col, bucket_cols, type="buckets"
         )
 
-    buckets_code_name = bucket_field_names[0]
-    buckets_description_name = bucket_field_names[1]
+    buckets_code = bucket_field_names[0]
+    buckets_code_name = bucket_field_names[1]
+    buckets_description_name = bucket_field_names[2]
     buckets_df[buckets_description_name] = buckets_df.apply(
         lambda row: " ".join(row[bucket_cols]), axis=1
     )
-    buckets_df[buckets_code_name] = buckets_df[code_col]
-    buckets_json = buckets_df[[buckets_code_name, buckets_description_name]].to_dict(
+    buckets_df[buckets_code] = buckets_df[code_col]
+    buckets_json = buckets_df[[buckets_code, buckets_code_name, buckets_description_name]].to_dict(
         orient="records"
     )
     save_json(buckets_json, filename=output_files["buckets"])
@@ -341,6 +360,6 @@ if __name__ == "__main__":
             "buckets": "isco/buckets_isco.json",
             "exact": "isco/titles_isco.json",
         },
-        bucket_field_names=["ISCO_code", "Titles_nospace"],
+        bucket_field_names=["ISCO_code", "Title", "Titles_nospace"],
         level=4,
     )
