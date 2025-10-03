@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Main module."""
-
+import sys
 import json
 import time
 import pandas as pd
@@ -171,11 +171,6 @@ class Coder:
         """
         clean_title = self.cl.simple_clean(title)
 
-        # Try to code using exact title match (and save a lot of computation
-        match = self.get_exact_match(clean_title)
-        if match:
-            return match
-
         # Gather all text data
         all_text = clean_title
 
@@ -188,6 +183,18 @@ class Coder:
         if description:
             clean_description = self.cl.simple_clean(description, known_only=False)
             all_text = all_text + " " + clean_description
+
+        # If there is no text at all, return None
+        if all_text.strip() == "":
+            if self.output == "single":
+                return None
+            else:
+                return [[], []]
+            
+        # Try to code using exact title match
+        match = self.get_exact_match(clean_title)
+        if match:
+            return match
 
         best_fit_codes = self.get_tfidf_match(all_text)
 
@@ -232,6 +239,37 @@ class Coder:
         coded_df = pd.concat([record_df, coded_df_codes, coded_df_scores], axis=1)
         return coded_df
 
+    def check_input_df(self, record_df, title_column, description_column, sector_column):
+        """
+        Checks the input dataframe for required columns and NA values
+        Keyword arguments:
+            record_df -- Pandas dataframe containing columns named:
+            title_column -- Freetext job title (default 'job_title')
+            sector_column -- additional description of industry/sector (default None)
+            description_column -- Freetext description of work/role/duties (default None)
+        Returns:
+            record_df: same dataframe, with NA values replaced by empty strings
+        """
+        columns_to_check = [title_column, sector_column, description_column]
+        
+        missing_columns = [col for col in columns_to_check if col not in record_df.columns]
+        if missing_columns:
+            raise ValueError(f"Error: The following specified columns are missing from the dataframe: {', '.join(missing_columns)}")
+        
+        existing_columns = [col for col in columns_to_check if col in record_df.columns]
+        na_counts = record_df[existing_columns].isna().sum().to_dict()
+        
+        print(f"Coding {len(record_df)} records in dataframe...")
+        for col, na_count in na_counts.items():
+            if na_count > 0:
+                print(
+                    f"Warning: Column '{col}' contains {na_count} missing values. These will be interpreted as empty strings."
+                )
+                
+        record_df[existing_columns] = record_df[existing_columns].fillna('')
+        
+        return(record_df)
+
     def code_data_frame(
         self,
         record_df,
@@ -260,6 +298,12 @@ class Coder:
                 "description": description_column,
             }
         )
+        
+        try:
+            record_df = self.check_input_df(record_df, title_column, description_column, sector_column)    
+        except ValueError as e:
+            print(e)
+            sys.exit(1)
 
         record_df[f"{self.scheme.upper()}_code"] = record_df.apply(
             self._code_row, axis=1
