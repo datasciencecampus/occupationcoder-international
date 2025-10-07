@@ -55,21 +55,25 @@ pip install git+https://github.com/datasciencecampus/occupationcoder-internation
 
 Once installed, you can use `occupationcoder-international` either through the provided Command Line Interface (CLI) script, or by importing and using the package in your own Python code.
 
-An example code snippet that imports package modules and uses this to code example input data provided is as follows:
+An example code snippet that imports package modules and uses this to code [example input data](src/oc3i/data/test_vacancies.csv) provided is as follows:
 ```
 import pandas as pd
 from oc3i import Coder
 from oc3i.coder import get_example_file
 
+# Initialise the coder with the desired coding scheme (here ISCO):
 coder = Coder(scheme = "isco")
 
+# Load the input data:
 dat = pd.read_csv(get_example_file())
+
+# Code the input data 'dat', using specified title, description, and sector columns as included in the input data:
 coder.code_data_frame(dat, 
                       title_column = "job_title", 
                       description_column = "job_description", 
                       sector_column = "job_sector")
 ```
-Note that where the example data is saved locally will depend on your setup; the above uses the function `get_example_file()` to find where it is stored on your system.  
+Note that where the [example data]((src/oc3i/data/test_vacancies.csv)) is saved locally will depend on your setup; the above uses the function `get_example_file()` to find where it is stored on your system.  
 The arguments given for the `code_data_frame()` method (`title_column` etc) are described in the function docstring and should match column names in the input file specificed - see "Settings: coding scheme and input format" below.
 
 ### Settings: coding scheme and input format
@@ -87,7 +91,7 @@ As per the example code above, names for each of these columns should be specifi
 ## 2. Running in the command line
 
 We provide a convenience script (`oc3i`) you can use to directly code a given input file from the command line, producing an output file with the results. This allows use of the coding tool outside of a Python environment, and without needing to write any Python code:
-The following CLI command should just run the coder with the default settings and using the example input file provided; it should produce an output file in the current directory also:
+The following CLI command should just run the coder with the default settings and using the [example input file](src/oc3i/data/test_vacancies.csv) provided; it should produce an output file in the current directory also:
 ```{bash}
 oc3i
 ```
@@ -108,6 +112,8 @@ To install the package for development, clone this repository in full and run
 ```
 pip install -e .
 ```
+from the folder you have cloned the repository to (usually `occupationcoder-international`).
+
 This should install the package in "editable" mode, allowing you to edit the code and have this reflected when you import the package. You will need to have git installed on your system for this to work. We recommend working in a dedicated virtual environment as per the above.
 
 ### Testing
@@ -119,7 +125,7 @@ python -m unittest
 ```
 
 in the top level occupationcoder directory.
-Look in [test_occupationcoder.py](tests/test_occupationcoder.py) for what is run and for examples of use. The output appears in the [processed_jobs.csv](/occupationcoder/outputs/processed_jobs.csv) file in the [outputs](./occupationcoder/outputs/) folder.
+Look in [test_occupationcoder.py](tests/test_occupationcoder.py) for what is run and for examples of use. The output appears in the [processed_jobs.csv](processed_jobs.csv) file.
 
 
 # Creating custom or bespoke dictionaries from coding schemes
