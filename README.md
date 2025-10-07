@@ -112,6 +112,8 @@ To install the package for development, clone this repository in full and run
 ```
 pip install -e .
 ```
+from the folder you have cloned the repository to (usually `occupationcoder-international`).
+
 This should install the package in "editable" mode, allowing you to edit the code and have this reflected when you import the package. You will need to have git installed on your system for this to work. We recommend working in a dedicated virtual environment as per the above.
 
 ### Testing
