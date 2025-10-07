@@ -61,9 +61,13 @@ import pandas as pd
 from oc3i import Coder
 from oc3i.coder import get_example_file
 
+# Initialise the coder with the desired coding scheme (here ISCO):
 coder = Coder(scheme = "isco")
 
+# Load the input data:
 dat = pd.read_csv(get_example_file())
+
+# Code the input data 'dat', using specified title, description, and sector columns as included in the input data:
 coder.code_data_frame(dat, 
                       title_column = "job_title", 
                       description_column = "job_description", 

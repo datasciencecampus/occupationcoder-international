@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# This bash script sets up a Python virtual environment and installs the package in editable mode.
+# It replicates the package setup set out in README and serves as a helper for the Devcontainer setup.
+
 set -e # Exit on error
 
 echo "Creating virtual environment..."
