@@ -1,23 +1,21 @@
 # OS generated files #
 ######################
 .DS_Store
-dask-worker-space/
-
-# Odd project files
-load_speed_test.py
-load_speed_test_results.csv
 
 # Outputs folder
-Outputs/
+src/oc3i/outputs/
+# Default output file
+output.csv
 
 # Data folder
-Data/
+src/oc3i/data/
 
 # exception for ISCO source data file (publicly available)
 !Data/ISCO-08 EN Structure and definitions.xlsx
 
-# exception for the Outputs folder (so that it’s available)
-!Outputs/.gitkeep
+# exception for the Outputs and Data folder (so that it’s available)
+!src/oc3i/outputs/.gitkeep
+!src/oc3i/data/.gitkeep
 
 # Compiled files
 *.pyc

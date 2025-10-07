@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 """Main module."""
-
+import sys
 import json
 import time
 import pandas as pd
 
 from pathlib import Path
+from importlib.resources import files
 
 # NLP related packages to support fuzzy-matching
-from occupationcoder import cleaner
+from oc3i import cleaner
 from rapidfuzz import process, fuzz
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -17,13 +18,14 @@ from argparse import ArgumentParser
 # For preventing windows multiprocessing error
 from multiprocessing import freeze_support
 
+PACKAGE_ROOT = Path(__file__).resolve().parent
+
 config = cleaner.load_config()
 
-script_dir = Path(config["dirs"]["script_dir"])
-parent_dir = Path(config["dirs"]["parent_dir"])
-lookup_dir = Path(config["dirs"]["lookup_dir"])
-output_dir = Path(config["dirs"]["output_dir"])
-
+script_dir = (PACKAGE_ROOT / config["dirs"]["script_dir"]).resolve()
+parent_dir = (PACKAGE_ROOT / config["dirs"]["parent_dir"]).resolve()
+lookup_dir = (PACKAGE_ROOT / config["dirs"]["lookup_dir"]).resolve()
+output_dir = (PACKAGE_ROOT / config["dirs"]["output_dir"]).resolve()
 
 class Coder:
     def __init__(
@@ -169,11 +171,6 @@ class Coder:
         """
         clean_title = self.cl.simple_clean(title)
 
-        # Try to code using exact title match (and save a lot of computation
-        match = self.get_exact_match(clean_title)
-        if match:
-            return match
-
         # Gather all text data
         all_text = clean_title
 
@@ -186,6 +183,18 @@ class Coder:
         if description:
             clean_description = self.cl.simple_clean(description, known_only=False)
             all_text = all_text + " " + clean_description
+
+        # If there is no text at all, return None
+        if all_text.strip() == "":
+            if self.output == "single":
+                return None
+            else:
+                return [[], []]
+            
+        # Try to code using exact title match
+        match = self.get_exact_match(clean_title)
+        if match:
+            return match
 
         best_fit_codes = self.get_tfidf_match(all_text)
 
@@ -230,6 +239,37 @@ class Coder:
         coded_df = pd.concat([record_df, coded_df_codes, coded_df_scores], axis=1)
         return coded_df
 
+    def check_input_df(self, record_df, title_column, description_column, sector_column):
+        """
+        Checks the input dataframe for required columns and NA values
+        Keyword arguments:
+            record_df -- Pandas dataframe containing columns named:
+            title_column -- Freetext job title (default 'job_title')
+            sector_column -- additional description of industry/sector (default None)
+            description_column -- Freetext description of work/role/duties (default None)
+        Returns:
+            record_df: same dataframe, with NA values replaced by empty strings
+        """
+        columns_to_check = [title_column, sector_column, description_column]
+        
+        missing_columns = [col for col in columns_to_check if col not in record_df.columns]
+        if missing_columns:
+            raise ValueError(f"Error: The following specified columns are missing from the dataframe: {', '.join(missing_columns)}")
+        
+        existing_columns = [col for col in columns_to_check if col in record_df.columns]
+        na_counts = record_df[existing_columns].isna().sum().to_dict()
+        
+        print(f"Coding {len(record_df)} records in dataframe...")
+        for col, na_count in na_counts.items():
+            if na_count > 0:
+                print(
+                    f"Warning: Column '{col}' contains {na_count} missing values. These will be interpreted as empty strings."
+                )
+                
+        record_df[existing_columns] = record_df[existing_columns].fillna('')
+        
+        return(record_df)
+
     def code_data_frame(
         self,
         record_df,
@@ -258,6 +298,12 @@ class Coder:
                 "description": description_column,
             }
         )
+        
+        try:
+            record_df = self.check_input_df(record_df, title_column, description_column, sector_column)    
+        except ValueError as e:
+            print(e)
+            sys.exit(1)
 
         record_df[f"{self.scheme.upper()}_code"] = record_df.apply(
             self._code_row, axis=1
@@ -327,6 +373,9 @@ class Coder:
         client.close()
         return result
 
+def get_example_file():
+    """Path to the bundled example dataset."""
+    return files("oc3i.data") / "test_vacancies.csv"
 
 def parse_cli_input():
     """
@@ -340,7 +389,7 @@ def parse_cli_input():
     """
     arg_parser = ArgumentParser()
     arg_parser.add_argument(
-        "--in_file", help="Input file to code", default=config["user"]["input_file"]
+        "--in_file", help="Input file to code"
     )
     arg_parser.add_argument(
         "--title_col",
@@ -361,7 +410,7 @@ def parse_cli_input():
         "--scheme", help="Scheme to code to", default=config["user"]["scheme"]
     )
     arg_parser.add_argument(
-        "--out_file", help="Output file name", default=config["user"]["output_file"]
+        "--out_file", help="Output file name"
     )
     arg_parser.add_argument(
         "--output",
@@ -369,26 +418,35 @@ def parse_cli_input():
         default=config["user"]["output"],
     )
     args = arg_parser.parse_args()
+    return args
+
+def main():
+    freeze_support()
+    args = parse_cli_input()
+
+    in_file = (
+        args.in_file
+        or config["user"].get("input_file")
+        or get_example_file()
+    )
+
+    out_file = (
+        args.out_file
+        or config["user"].get("output_file")
+        or Path.cwd() / "output.csv"
+    )
+
+    df = pd.read_csv(in_file)
+
     print("\nRunning coder with the following settings:\n")
-    print("Input file: " + args.in_file)
+    print("Input file: " + str(in_file))
     print("Coding to scheme: " + args.scheme)
     print("Output type: " + args.output)
     print("Data column job titles: " + args.title_col)
     print("Data column job sector: " + args.sector_col)
     print("Data column job description: " + args.description_col)
-    print("Output file: " + args.out_file + "\n")
-    return args
+    print("Output file: " + str(out_file) + "\n")
 
-
-# Define main function. Main operations are placed here to make it possible
-# use multiprocessing in Windows.
-if __name__ == "__main__":
-    freeze_support()
-
-    args = parse_cli_input()
-
-    # Read command line inputs
-    df = pd.read_csv(args.in_file)
     commCoder = Coder(scheme=args.scheme, output=args.output)
     proc_tic = time.perf_counter()
     df = commCoder.code_data_frame(
@@ -398,8 +456,12 @@ if __name__ == "__main__":
         description_column=args.description_col,
     )
     proc_toc = time.perf_counter()
+    output_dir.mkdir(parents=True, exist_ok=True)
     print("Actual coding ran in: {}".format(proc_toc - proc_tic))
     print("occupationcoder message:\n" + "Coding complete. Showing first results...")
     print(df.head())
-    # Write to csv
-    df.to_csv(output_dir / args.out_file, index=False, encoding="utf-8")
+    df.to_csv(out_file, index=False, encoding="utf-8")
+    print("Coding complete, output written to:", out_file)
+
+if __name__ == "__main__":
+    main()

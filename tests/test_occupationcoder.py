@@ -9,8 +9,8 @@ import os
 import subprocess
 
 import pandas as pd
-
-from occupationcoder import coder, cleaner
+from importlib.resources import files
+from oc3i import coder, cleaner
 
 SAMPLE_SIZE = 100000
 
@@ -42,7 +42,7 @@ class TestOccupationcoder(unittest.TestCase):
         ]
 
         # Load the three example records
-        self.test_df = pd.read_csv(os.path.join("tests", "test_vacancies.csv"))
+        self.test_df = pd.read_csv(files("oc3i.data") / "test_vacancies.csv")
 
         # Instantiate matching class
         self.matcher = coder.Coder(scheme="soc", output="single")
@@ -102,7 +102,7 @@ class TestOccupationcoder(unittest.TestCase):
 
     def test_code_data_frame(self):
         """Running the included examples from a file."""
-        df = pd.read_csv(os.path.join("tests", "test_vacancies.csv"))
+        df = pd.read_csv(files("oc3i.data") / "test_vacancies.csv")
         df = self.matcher.code_data_frame(
             df,
             title_column="job_title",
@@ -113,7 +113,7 @@ class TestOccupationcoder(unittest.TestCase):
 
     def test_multi_code_output(self):
         """Running samples from file and getting codes and scores out using ISCO"""
-        df = pd.read_csv(os.path.join("tests", "test_vacancies.csv"))
+        df = pd.read_csv(files("oc3i.data") / "test_vacancies.csv")
         df = self.isco_matcher.code_data_frame(
             df,
             title_column="job_title",
@@ -146,15 +146,12 @@ class TestOccupationcoder(unittest.TestCase):
             [
                 sys.executable,
                 "-m",
-                "occupationcoder.coder",
-                "--in_file=tests/test_vacancies.csv",
+                "oc3i.coder",
                 "--scheme=soc",
                 "--output=single",
             ]
         )
-        df = pd.read_csv(
-            os.path.join("occupationcoder", "outputs", "processed_jobs.csv")
-        )
+        df = pd.read_csv("output.csv")
         self.assertEqual(df["SOC_code"].to_list(), [211, 242, 912])
 
     def manual_load_test(self):
