@@ -50,7 +50,7 @@ source env/Scripts/activate
 
 To install the package and its dependencies directly from this repository, use:
 ```
-pip install git+https://github.com/datasciencecampus/occupationcoder-international.git@i12_feat
+pip install git+https://github.com/datasciencecampus/occupationcoder-international.git@main
 ```
 
 Once installed, you can use `occupationcoder-international` either through the provided Command Line Interface (CLI) script, or by importing and using the package in your own Python code.
