@@ -244,11 +244,14 @@ class Coder:
 
         coded_df_codenames = pd.DataFrame(index=record_df.index)
         if self.get_titles != "none":
-            coded_df_codenames = coded_df_codes.map(self.get_code_name)
-            coded_df_codenames.rename(columns=lambda col: col.replace("prediction", "title"), inplace=True)
-            if self.get_titles == "best":
-                coded_df_codenames = coded_df_codenames.iloc[:, :1]
-    
+            if self.scheme == "soc":
+                print("Warning: Job titles are not available for SOC scheme, skipping job titles output.")
+            else:
+                coded_df_codenames = coded_df_codes.map(self.get_code_name)
+                coded_df_codenames.rename(columns=lambda col: col.replace("prediction", "title"), inplace=True)
+                if self.get_titles == "best":
+                    coded_df_codenames = coded_df_codenames.iloc[:, :1]
+                
         coded_df = pd.concat([record_df, coded_df_codes, coded_df_codenames, coded_df_scores], axis=1)
         return coded_df
 
