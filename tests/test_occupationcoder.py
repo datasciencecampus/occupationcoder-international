@@ -3,17 +3,66 @@
 """Tests for `occupationcoder` package."""
 
 import unittest
+from unittest.mock import patch
 import time
 import sys
-import os
 import subprocess
 
 import pandas as pd
 from importlib.resources import files
 from oc3i import coder, cleaner
+from oc3i.coder import parse_cli_input
 
-SAMPLE_SIZE = 100000
+config = cleaner.load_config()
 
+
+class TestParseCliInput(unittest.TestCase):
+
+    @patch('sys.argv', [
+        'script_name',
+        '--in_file', 'input.csv',
+        '--title_col', 'job_title',
+        '--sector_col', 'industry',
+        '--description_col', 'desc',
+        '--scheme', 'SOC2020',
+        '--out_file', 'output.csv',
+        '--output', 'multi',
+        '--get_titles', 'best'
+    ])
+    def test_all_arguments_provided(self):
+        args = parse_cli_input()
+        self.assertEqual(args.in_file, 'input.csv')
+        self.assertEqual(args.title_col, 'job_title')
+        self.assertEqual(args.sector_col, 'industry')
+        self.assertEqual(args.description_col, 'desc')
+        self.assertEqual(args.scheme, 'SOC2020')
+        self.assertEqual(args.out_file, 'output.csv')
+        self.assertEqual(args.output, 'multi')
+        self.assertEqual(args.get_titles, 'best')
+
+    @patch('sys.argv', ['script_name', '--in_file', 'input.csv'])
+    def test_partial_arguments_provided(self):
+        args = parse_cli_input()
+        self.assertEqual(args.in_file, 'input.csv')
+        self.assertEqual(args.title_col, config["user"]["title_column"])
+        self.assertEqual(args.sector_col, config["user"]["sector_column"])
+        self.assertEqual(args.description_col, config["user"]["description_column"])
+        self.assertEqual(args.scheme, config["user"]["scheme"])
+        self.assertIsNone(args.out_file)
+        self.assertEqual(args.output, config["user"]["output"])
+        self.assertEqual(args.get_titles, config["user"]["get_titles"])
+
+    @patch('sys.argv', ['script_name'])
+    def test_no_arguments_provided(self):
+        args = parse_cli_input()
+        self.assertIsNone(args.in_file)
+        self.assertEqual(args.title_col, config["user"]["title_column"])
+        self.assertEqual(args.sector_col, config["user"]["sector_column"])
+        self.assertEqual(args.description_col, config["user"]["description_column"])
+        self.assertEqual(args.scheme, config["user"]["scheme"])
+        self.assertIsNone(args.out_file)
+        self.assertEqual(args.output, config["user"]["output"])
+        self.assertEqual(args.get_titles, config["user"]["get_titles"])
 
 class TestOccupationcoder(unittest.TestCase):
     """Tests for `occupationcoder` package."""
@@ -122,21 +171,6 @@ class TestOccupationcoder(unittest.TestCase):
         )
         self.assertEqual(df["prediction 1"].to_list(), ["2111", "2631", "3333"])
 
-    # def test_parallel_code_data_frame(self):
-    #     """
-    #     Running the included examples from a file.
-    #     DISABLED because it can't be run through testr, parallel testing
-    #     interferes with parallelism in code
-    #     """
-    #     df = pd.read_csv(os.path.join('tests', 'test_vacancies.csv'))
-    #     df = self.matcher.parallel_code_data_frame(
-    #         df,
-    #         title_column="job_title",
-    #         sector_column="job_sector",
-    #         description_column="job_description"
-    #         )
-    #     self.assertEqual(df['SOC_code'].to_list(), ['211', '242', '912'])
-
     def test_command_line(self):
         """Test code execution at command line"""
 
@@ -154,48 +188,13 @@ class TestOccupationcoder(unittest.TestCase):
         df = pd.read_csv("output.csv")
         self.assertEqual(df["SOC_code"].to_list(), [211, 242, 912])
 
-    def manual_load_test(self):
-        """
-        Look at execution speed.
-        On test machine:  50k short records in ~308s.
-        Does not execute as part of automated tests.
-        """
-        # Multiply up that dataset to many, many rows so we can test time taken
-        big_df = self.test_df.sample(SAMPLE_SIZE, replace=True, ignore_index=True)
-        print("Size of test dataset: {}".format(big_df.shape[0]))
+    def test_get_code_name(self):
+        testing = pd.Series(["1111", "2151", "4132", "7221", "9111"])
+        expected = ["Legislators", 
+                    "Electrical Engineers", 
+                    "Data Entry Clerks", 
+                    "Blacksmiths, Hammersmiths and Forging Press Workers", 
+                    "Domestic Cleaners and Helpers"]
+        results = testing.map(self.isco_matcher.get_code_name)
+        self.assertEqual(list(results), expected)
 
-        # Time only the actual code assignment process
-        proc_tic = time.perf_counter()
-        _ = self.matcher.code_data_frame(
-            big_df,
-            title_column="job_title",
-            sector_column="job_sector",
-            description_column="job_description",
-        )
-        print(_.shape)
-        print(_[["job_title", "SOC_code"]].head(5))
-        proc_toc = time.perf_counter()
-        print("Coding process ran in: {}".format(proc_toc - proc_tic))
-
-    def manual_parallel_load_test(self):
-        """
-        Look at execution speed of parallel implementation.
-        On test machine: 100k short records in ~160s.
-        Does not execute as part of automated tests.
-        """
-        # Multiply up that dataset to many, many rows so we can test time taken
-        big_df = self.test_df.sample(SAMPLE_SIZE, replace=True, ignore_index=True)
-        print("Size of test dataset: {}".format(big_df.shape[0]))
-
-        # Time only the actual code assignment process
-        proc_tic = time.perf_counter()
-        _ = self.matcher.parallel_code_data_frame(
-            big_df,
-            title_column="job_title",
-            sector_column="job_sector",
-            description_column="job_description",
-        )
-        print(_.shape)
-        print(_[["job_title", "SOC_code"]].head(5))
-        proc_toc = time.perf_counter()
-        print("Coding process ran in: {}".format(proc_toc - proc_tic))
