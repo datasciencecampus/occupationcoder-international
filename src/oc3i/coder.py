@@ -33,6 +33,7 @@ class Coder:
         lookup_dir=lookup_dir,
         scheme=config["user"]["scheme"],
         output=config["user"]["output"],
+        get_titles=config["user"]["get_titles"]
     ):
         """
         Main class initialiser
@@ -44,9 +45,13 @@ class Coder:
             string containing scheme
         output:str
             string containing directory where all outputs to be placed
+        get_titles:str
+            string, one of three options: "all", "best", "none"
+            whether to return titles for all matches, only the best match, or none
         """
         self.scheme = scheme.lower()
         self.output = output
+        self.get_titles = get_titles
         self.cl = cleaner.Cleaner(scheme=self.scheme)
         # Load up the titles lists, ensure codes are loaded as strings...
         with open(
@@ -236,7 +241,15 @@ class Coder:
             [f"{self.scheme.upper()}_code", "Predicted_scores", "Predicted_codes"],
             axis=1,
         )
-        coded_df = pd.concat([record_df, coded_df_codes, coded_df_scores], axis=1)
+
+        coded_df_codenames = pd.DataFrame(index=record_df.index)
+        if self.get_titles != "none":
+            coded_df_codenames = coded_df_codes.map(self.get_code_name)
+            coded_df_codenames.rename(columns=lambda col: col.replace("prediction", "title"), inplace=True)
+            if self.get_titles == "best":
+                coded_df_codenames = coded_df_codenames.iloc[:, :1]
+    
+        coded_df = pd.concat([record_df, coded_df_codes, coded_df_codenames, coded_df_scores], axis=1)
         return coded_df
 
     def check_input_df(self, record_df, title_column, description_column, sector_column):
@@ -373,6 +386,24 @@ class Coder:
         client.close()
         return result
 
+    def get_code_name(self, code: str):
+        """
+        Returns the name/description associated with a given code
+
+        Keyword arguments:
+            code -- string, a code in the chosen scheme
+        Returns:
+            string, the name/description associated with the code
+        """
+        try:
+            name = self.mg_buckets.loc[
+                self.mg_buckets[f"{self.scheme.upper()}_code"] == code,
+                "Title",
+            ].values[0]
+        except IndexError:
+            name = ""
+        return name
+
 def get_example_file():
     """Path to the bundled example dataset."""
     return files("oc3i.data") / "test_vacancies.csv"
@@ -417,6 +448,11 @@ def parse_cli_input():
         help="Type of Outputs: single or multi",
         default=config["user"]["output"],
     )
+    arg_parser.add_argument(
+        "--get_titles",
+        help='Whether to return job titles for codes: "all", "best", or "none"',
+        default=config["user"]["get_titles"],
+    )
     args = arg_parser.parse_args()
     return args
 
@@ -442,12 +478,13 @@ def main():
     print("Input file: " + str(in_file))
     print("Coding to scheme: " + args.scheme)
     print("Output type: " + args.output)
+    print("Printing predicted titles: " + args.get_titles)
     print("Data column job titles: " + args.title_col)
     print("Data column job sector: " + args.sector_col)
     print("Data column job description: " + args.description_col)
     print("Output file: " + str(out_file) + "\n")
 
-    commCoder = Coder(scheme=args.scheme, output=args.output)
+    commCoder = Coder(scheme=args.scheme, output=args.output, get_titles=args.get_titles)
     proc_tic = time.perf_counter()
     df = commCoder.code_data_frame(
         df,
