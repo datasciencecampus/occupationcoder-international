@@ -15,9 +15,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from argparse import ArgumentParser
 
-# For preventing windows multiprocessing error
-from multiprocessing import freeze_support
-
 PACKAGE_ROOT = Path(__file__).resolve().parent
 
 config = cleaner.load_config()
@@ -344,51 +341,6 @@ class Coder:
                 record_df = self.shape_output(record_df)
         return record_df
 
-    def parallel_code_data_frame(
-        self,
-        record_df,
-        title_column: str = "job_title",
-        sector_column: str = None,
-        description_column: str = None,
-    ):
-        """
-        Applies tool to all rows in a provided pandas DataFrame
-
-        Keyword arguments:
-            record_df -- Pandas dataframe containing columns named:
-            title_column -- Freetext job title to find a code for
-                            (default 'job_title')
-            sector_column -- Any description of industry/sector (default None)
-            description_column -- Freetext description of work/role/duties
-                                  (default None)
-        """
-        # Import within function, makes class/module friendly to systems that
-        # don't have modin installed and don't intend to use the function
-        import modin.pandas as mpd
-
-        # Initialises something Dask needs to parallelise operations
-        from distributed import Client
-
-        client = Client()
-
-        # Record the column names for later
-        self.df_columns.update(
-            {
-                "title": title_column,
-                "sector": sector_column,
-                "description": description_column,
-            }
-        )
-
-        # Overwrite to save memory after conversion to Modin DataFrame
-        record_df = mpd.DataFrame(record_df)
-        record_df["code"] = record_df.apply(self._code_row, axis=1)
-
-        # Hack a private method to convert back to Pandas DataFrame
-        result = record_df._to_pandas()
-        client.close()
-        return result
-
     def get_code_name(self, code: str):
         """
         Returns the name/description associated with a given code
@@ -460,7 +412,6 @@ def parse_cli_input():
     return args
 
 def main():
-    freeze_support()
     args = parse_cli_input()
 
     in_file = (
