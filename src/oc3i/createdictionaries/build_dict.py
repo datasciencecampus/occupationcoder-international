@@ -6,7 +6,6 @@ from pathlib import Path
 from unidecode import unidecode
 from datetime import datetime
 
-
 from oc3i import cleaner
 
 config = cleaner.load_config()
