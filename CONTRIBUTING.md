@@ -18,32 +18,38 @@ As above, we cannot commit to implementing any additional functionality.
 
 To continue development, we suggest creating your own fork of the repository.
 
-1. Fork the `occupationcoder` repo on GitHub.
+1. Fork the [`occupationcoder-international`](https://github.com/datasciencecampus/occupationcoder-international) repo on GitHub.
 2. Clone your fork locally:
     ```
-    $ git clone git@github.com:your_name_here/occupationcoder.git
+    $ git clone git@github.com:your_name_here/occupationcoder-international.git
     ```
 3. Create a virtualenv for development. The following steps assume the use of the venv library:
     ```
-    $ python3 -m venv occupationcoder
+    $ python3 -m venv env
     ```
-
-4. Create a branch for local development::
+4. Activate the virtualenv:
     ```
-    $ git checkout -b name-of-your-bugfix-or-feature
+    $ source env/bin/activate  # On Windows use `env\Scripts\activate`
     ```
-   Now you can make your changes locally.
-
-5. This repository makes use of pre-commit hooks. If approaching this project as a developer, you can install and enable pre-commit by running the following in your shell:
-
+5. Install the package in editable mode with development dependencies:
+    ```
+    $ pip install -e ".[dev]"
+    ```
+6. This repository makes use of pre-commit hooks. If approaching this project as a developer, you can install and enable pre-commit by running the following in your shell:
     ```
     $ pip install pre-commit
     $ pre-commit install
     ```
-
-6. Commit your changes and push your branch to GitHub::
+7. Create a branch for local development::
+    ```
+    $ git checkout -b name-of-your-bugfix-or-feature
+    ```
+   Now you can make your changes locally.  
+   
+8. Commit your changes and push your branch to GitHub::
     ```
     $ git add .
     $ git commit -m "Your detailed description of your changes."
     $ git push origin name-of-your-bugfix-or-feature
     ```
+9. Submit a pull request to the upstream [occupationcoder-international](https://github.com/datasciencecampus/occupationcoder-international) repo through the GitHub website.

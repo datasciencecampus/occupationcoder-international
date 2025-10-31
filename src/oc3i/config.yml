@@ -5,8 +5,9 @@ dirs:
   output_dir: outputs/
 
 user:
-  scheme: soc
+  scheme: isco
   output: multi
+  get_titles: all  # options: "all", "best", "none" 
   # input_file: /path/to/your/data.csv     # leave blank to use bundled example
   # output_file: /path/to/your/output.csv  # leave blank for current wd
   title_column: job_title
