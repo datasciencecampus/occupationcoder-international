@@ -16,7 +16,7 @@ dependencies = [
     "pandas>=2.2.3",
     "rapidfuzz==3.13.0",
     "regex==2024.11.6",
-    "scikit-learn==1.6.1",
+    "scikit-learn>=1.6.1",
     "scipy>=1.15.3",
     "Unidecode==1.4.0",
     "pyaml==25.1.0"
